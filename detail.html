@@ -1,377 +1,321 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id" class="scroll-smooth">
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.jpeg" type="image/x-icon">
-  <title>Koperasi Produsen Energi, Pertambangan dan Perdagangan</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="shortcut icon" href="images/favicon.jpeg" type="image/x-icon">
+    <title>Portofolio - Koperasi Produsen Energi, Pertambangan dan Perdagangan</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- nice select -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
-  <style>
-    .img-box img {
-      width: 100%; /* Gambar mengisi lebar container */
-      height: auto; /* Menjaga aspek rasio gambar */
-      border-radius: 8px; /* Membuat sudut gambar lebih lembut */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan efek bayangan */
-    }
-
-    .detail-box {
-      padding: 20px;
-    }
-
-    .detail-box h3 {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .detail-box p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    .detail-box p.note {
-      font-size: 14px;
-      color: #777;
-      font-style: italic;
-    }
-  </style>
+    <script>
+        // Konfigurasi Kustom Tailwind CSS
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#D4AF37',
+                        'secondary': '#1F2937',
+                        'dark-bg': '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                        trajan: ['Trajan Pro', 'Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Style Global Konsisten */
+        @font-face {
+            font-family: 'Trajan Pro';
+            src: url('fonts/TrajanPro-Regular.ttf') format('truetype');
+            font-weight: normal; font-style: normal;
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+        .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-section.visible { opacity: 1; transform: translateY(0); }
+        #navbar { position: sticky; top: 0; background-color: rgba(17, 24, 39, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: #D4AF37; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 999; }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: #b8860b; transform: translateY(-5px); }
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: #D4AF37; z-index: 1001; }
+        .page-header {
+            padding: 12rem 0 6rem 0;
+            background-color: #111827;
+            background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('images/bg-new/bg-new3.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .page-title {
+            font-family: 'Trajan Pro', 'Cinzel', serif;
+        }
+        .list-alpha {
+            list-style-type: lower-alpha;
+            padding-left: 1.5rem;
+        }
+    </style>
 </head>
 
-<body>
-  <audio id="background-music" autoplay loop>
-    <source src="images/WhatsApp Audio 2025-03-22 at 01.08.14.mpeg" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
+<body class="font-sans text-gray-800">
+    <audio id="background-music" autoplay loop>
+        <source src="images/WhatsApp Audio 2025-03-22 at 01.08.14.mpeg" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
-    <!-- Navbar -->
-<div class="header_bottom">
-  <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
-              <img src="" alt="" style="height: 50px; width: auto;">
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="about.html">About</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
-                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Top Management
-                      </a>
-                      <div class="dropdown-menu transparent-box-dropdown" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="service.html">Penasehat</a>
-                            <a class="dropdown-item" href="advisor pengawas.html">Pendiri</a>
-                            <a class="dropdown-item" href="legal koperasi.html">Pengurus</a>
-                            <a class="dropdown-item" href="dewan pengawas.html">Pengawas</a>
-                            <a class="dropdown-item" href="anggota.html">Anggota</a>
+    <div class="progress-bar"></div>
+    <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    
+    <nav id="navbar" class="w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex-shrink-0">
+                    <img src="images/logo-placeholder-white.png" alt="Logo Koperasi" class="h-12 w-auto">
+                </a>
+                <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-primary nav-link font-medium">Home</a>
+                    <a href="about.html" class="text-white hover:text-primary nav-link font-medium">About</a>
+                    <div class="relative group">
+                        <button class="text-white hover:text-primary flex items-center nav-link font-medium">Top Management <i class="fas fa-chevron-down text-xs ml-2 mt-1 transition-transform group-hover:rotate-180"></i></button>
+                        <div class="absolute hidden group-hover:block w-48 bg-dark-bg/90 mt-2 rounded-md shadow-lg overflow-hidden z-50">
+                            <a href="service.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors">Penasehat</a>
+                            <a href="advisor pengawas.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors">Pendiri</a>
+                            <a href="legal koperasi.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors">Pengurus</a>
+                            <a href="dewan pengawas.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors">Pengawas</a>
+                            <a href="anggota.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors">Anggota</a>
                         </div>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="team.html">Contact</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="portofolio.html">Portofolio</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="berita.html">Berita</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="galeri.html">Galeri</a>
-                  </li>
-                  <!-- Dropdown Bahasa -->
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" 
-                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <img src="https://flagcdn.com/id.svg" alt="Indonesia" style="width: 20px; height: auto;"> ID
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
-                          <a class="dropdown-item" href="#" data-lang="id">
-                              <img src="https://flagcdn.com/id.svg" alt="Indonesia" style="width: 20px; height: auto;"> Indonesia
-                          </a>
-                          <a class="dropdown-item" href="#" data-lang="en">
-                              <img src="https://flagcdn.com/gb.svg" alt="English" style="width: 20px; height: auto;"> English
-                          </a>
-                      </div>
-                  </li>
-              </ul>
-          </div>
-      </nav>
-  </div>
-</div>
-
-<style>
-  /* Navbar Styles - Warna Abu Tua */
-  .header_bottom {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: #333; /* Warna abu tua solid */
-      padding: 10px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  }
-  
-  .navbar {
-      padding: 0;
-  }
-  
-  .navbar-nav {
-      align-items: center;
-  }
-  
-  .nav-item {
-      margin: 0 8px;
-  }
-  
-  .nav-link {
-      color: white !important;
-      font-weight: 500;
-      font-size: 14px;
-      padding: 10px 15px !important;
-      text-transform: uppercase;
-      transition: all 0.3s;
-      border-radius: 4px;
-  }
-  
-  .nav-link:hover {
-      color: white !important;
-      background-color: #555; /* Warna abu lebih terang saat hover */
-  }
-  
-  .dropdown-menu {
-      background-color: #444; /* Warna abu untuk dropdown */
-      border: none;
-      border-radius: 0 0 5px 5px;
-  }
-  
-  .dropdown-item {
-      color: white !important;
-      padding: 10px 20px;
-      transition: all 0.2s;
-  }
-  
-  .dropdown-item:hover {
-      background-color: #555; /* Warna hover untuk dropdown item */
-  }
-  
-  .navbar-toggler {
-      border-color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 992px) {
-      .navbar-collapse {
-          background-color: #333; /* Warna sama dengan desktop */
-          padding: 15px;
-          margin-top: 10px;
-          border-radius: 5px;
-      }
-      
-      .nav-item {
-          margin: 5px 0;
-      }
-      
-      .dropdown-menu {
-          background-color: #444;
-          margin-left: 15px;
-      }
-  }
-  
-  @media (max-width: 768px) {
-      .nav-link {
-          font-size: 13px;
-          padding: 8px 12px !important;
-      }
-      
-      .navbar-brand img {
-          height: 40px !important;
-      }
-  }
-</style>
-  <!-- service section -->
-  <section class="service_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2 id="sectionTitle">
-            Study Kelayakan Pertambangan Rakyat <br> Pertambangan Rakyat
-        </h2>
-      </div>
-
-      <!-- Gambar dan Penjelasan Pendiri Koperasi -->
-      <div class="row">
-        <div class="col-md-6">
-          <div class="img-box">
-            <img src="images/gambar/porto 11.jpeg" alt="Pendiri Koperasi" class="img-fluid" />
-            <img src="images/gambar/porto 14.jpeg" alt="Pendiri Koperasi" class="img-fluid" />
-
-          </div>
+                    </div>
+                    <a href="team.html" class="text-white hover:text-primary nav-link font-medium">Contact</a>
+                    <a href="portofolio.html" class="text-white hover:text-primary nav-link font-medium">Portofolio</a>
+                    <a href="berita.html" class="text-white hover:text-primary nav-link font-medium">Berita</a>
+                    <a href="galeri.html" class="text-white hover:text-primary nav-link font-medium">Galeri</a>
+                    <div class="relative group">
+                        <button id="lang-dropdown-btn" class="text-white flex items-center gap-2 nav-link font-medium"></button>
+                        <div id="lang-dropdown-menu" class="absolute hidden w-40 bg-dark-bg/90 mt-2 rounded-md shadow-lg overflow-hidden right-0 z-50">
+                            <a href="#" class="lang-switcher block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors flex items-center" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-5 h-auto mr-2"> Indonesia</a>
+                            <a href="#" class="lang-switcher block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors flex items-center" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-5 h-auto mr-2"> English</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <h3 id="founderTitle">Portofolio Patuari Mining Niaga</h3>
-            <p id="founderDescription1">
-              Study Kelayakan Pertambangan Rakyat Dengan Mengelolah Bijih Logam Metode Heap Leaching Jinchan Metalic Ore Dressing Agent (Environmental-Friendly Gold Extraction) dan Cyanida + GDA (Gold Dressing Agent) Ramah Lingkungan (Eco-Friendly). Set Up IPAL Instalasi Pengolahan Air Limbah Pasca Tambang, prasarana digunakan untuk mengolah limbah cair yang beracun menjadi air yang aman untuk digunakan kembali. IPAL dapat digunakan untuk mengolah limbah dari limbah industri, seperti limbah cair yang tercemar dari aktivitas pertambangan.
-            </p>
-            <p id="founderDescription2">
-              Catatan:
-              * Pasal 2 ayat (1) Keputusan Menteri Negara Lingkungan Hidup Nomor 202 Tahun 2004, Air limbah kegiatan pertambangan bijih emas dan atau tembaga terdiri dari:
-              <li>A. Air limbah kegiatan penambangan bijih emas dan atau tembaga yaitu air yang terkena dampak kegiatan penambangan bijih emas dan atau tembaga sehingga kualitasnya berubah dan perubahan tersebut terkait langsung dengan kegiatan penambangan bijih emas dan atau tembaga tersebut.</li>
-              <li>B. Air limbah kegiatan pengolahan bijih emas dan atau tembaga yang dibuang ke badan air.            </li>
-              <li>C. Air limbah bagi kegiatan paska reboisasi penutupan tambang.</li>
-            </p>
-            <p class="note" id="founderNote">
-              Keputusan Menteri Negara Lingkungan Hidup Nomor 202 Tahun 2004 Tentang Baku Mutu Air Limbah Bagi Usaha dan Kegiatan Pertambangan Bijih Emas dan Tembaga.
-              Lokasi: Minahasa - Sulawesi Utara.
-            </p>
-          </div>
+        <div id="mobile-menu" class="lg:hidden hidden bg-dark-bg/95">
+             <div class="px-6 pt-2 pb-6 space-y-2">
+                 </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
+    
+    <main id="top">
+        <header class="page-header">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white page-title uppercase tracking-wider" data-translate-key="pageTitle">Portofolio</h1>
+                <p class="text-lg text-gray-300 mt-4 max-w-2xl mx-auto" data-translate-key="pageSubtitle">Dokumentasi proyek dan studi kelayakan yang telah kami laksanakan.</p>
+            </div>
+        </header>
 
-  <!-- Footer Section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p id="footerText">
-        &copy; <span id="displayYear"></span> All Rights Reserved By Patuari Mining Niaga
-      </p>
-    </div>
-  </footer>
+        <section class="py-20 lg:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-4">
+                        <img src="images/gambar/porto 11.jpeg" alt="Portofolio 1" class="w-full h-auto rounded-lg shadow-xl">
+                        <img src="images/gambar/porto 14.jpeg" alt="Portofolio 2" class="w-full h-auto rounded-lg shadow-xl">
+                    </div>
+                    <div class="text-gray-700 leading-relaxed">
+                        <h2 class="text-2xl lg:text-3xl font-bold text-secondary mb-4 font-display" data-translate-key="contentTitle">Studi Kelayakan Pertambangan Rakyat & IPAL</h2>
+                        <p class="mb-4" data-translate-key="contentDesc1">
+                            Studi kelayakan pertambangan rakyat dengan mengelola bijih logam menggunakan metode <i>Heap Leaching Jinchan Metalic Ore Dressing Agent (Environmental-Friendly Gold Extraction)</i> dan Sianida + GDA (Gold Dressing Agent) yang ramah lingkungan (Eco-Friendly). Termasuk di dalamnya adalah Set Up IPAL (Instalasi Pengolahan Air Limbah) pasca-tambang, sebuah prasarana untuk mengolah limbah cair beracun menjadi air yang aman untuk digunakan kembali, khususnya untuk limbah industri dari aktivitas pertambangan.
+                        </p>
+                        <div class="mt-6 p-4 border-l-4 border-primary bg-gray-50 rounded-r-lg">
+                            <p class="font-semibold text-secondary" data-translate-key="noteTitle">Catatan Penting:</p>
+                            <p class="text-sm mt-2" data-translate-key="noteDesc">
+                                Sesuai Pasal 2 ayat (1) Keputusan Menteri Negara Lingkungan Hidup No. 202/2004, air limbah kegiatan tambang bijih emas dan/atau tembaga mencakup:
+                            </p>
+                            <ul class="list-alpha text-sm mt-2 space-y-1">
+                                <li data-translate-key="notePointA">Air limbah dari kegiatan penambangan.</li>
+                                <li data-translate-key="notePointB">Air limbah dari kegiatan pengolahan bijih.</li>
+                                <li data-translate-key="notePointC">Air limbah dari kegiatan pasca-reboisasi penutupan tambang.</li>
+                            </ul>
+                            <p class="text-sm mt-4 italic" data-translate-key="noteLocation">
+                                <strong>Referensi:</strong> Kepmen LH No. 202/2004.
+                                <br>
+                                <strong>Lokasi Proyek:</strong> Minahasa - Sulawesi Utara.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <footer class="bg-dark-bg text-gray-300 py-16 w-full">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <img src="images/logo-placeholder-white.png" alt="Logo Koperasi" class="h-14 w-auto mb-4">
+                    <p class="text-sm text-gray-400">Koperasi produsen energi terbarukan, pertambangan, dan perdagangan yang inovatif dan ramah lingkungan.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Tentang Kami</a></li>
+                        <li><a href="portofolio.html" class="hover:text-primary transition-colors">Portofolio</a></li>
+                        <li><a href="berita.html" class="hover:text-primary transition-colors">Berita</a></li>
+                        <li><a href="team.html" class="hover:text-primary transition-colors">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i><span>Jl. Jenderal Sudirman Kav. 52-53, Jakarta Selatan, Indonesia</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone mr-3 text-primary"></i><span>(021) 123-4567</span></li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3 text-primary"></i><span>info@octamining.coop</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-secondary hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-secondary hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-secondary hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-secondary hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-500"><p>© <span id="displayYear"></span> Octa Mining Niaga. All Rights Reserved.</p></div>
+        </div>
+    </footer>
 
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <!-- nice select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('displayYear').textContent = new Date().getFullYear();
+        
+        const backToTopButton = document.querySelector('.back-to-top');
+        const progressBar = document.querySelector('.progress-bar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                if(backToTopButton) backToTopButton.classList.add('visible');
+            } else {
+                if(backToTopButton) backToTopButton.classList.remove('visible');
+            }
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if(progressBar) progressBar.style.width = scrollPercent + '%';
+        });
 
-  <script>
-    // Data konten dalam dua bahasa
-    const content = {
-      id: {
-        sectionTitle: "Portofolio Patuari Mining Niaga",
-        sectionDescription: "PENDIRI KOPERASI",
-        founderTitle: "Pendiri Koperasi Patuari Mining Niaga",
-        founderDescription1: "Study Kelayakan Pertambangan Rakyat Dengan Mengelolah Bijih Logam Metode Heap Leaching Jinchan Metalic Ore Dressing Agent (Environmental-Friendly Gold Extraction) dan Cyanida + GDA (Gold Dressing Agent) Ramah Lingkungan (Eco-Friendly). Set Up IPAL Instalasi Pengolahan Air Limbah Pasca Tambang, prasarana digunakan untuk mengolah limbah cair yang beracun menjadi air yang aman untuk digunakan kembali. IPAL dapat digunakan untuk mengolah limbah dari limbah industri, seperti limbah cair yang tercemar dari aktivitas pertambangan.",
-        founderDescription2: "Catatan: * Pasal 2 ayat (1) Keputusan Menteri Negara Lingkungan Hidup Nomor 202 Tahun 2004, Air limbah kegiatan pertambangan bijih emas dan atau tembaga terdiri dari: A. Air limbah kegiatan penambangan bijih emas dan atau tembaga yaitu air yang terkena dampak kegiatan penambangan bijih emas dan atau tembaga sehingga kualitasnya berubah dan perubahan tersebut terkait langsung dengan kegiatan penambangan bijih emas dan atau tembaga tersebut. B. Air limbah kegiatan pengolahan bijih emas dan atau tembaga yang dibuang ke badan air. C. Air limbah bagi kegiatan paska reboisasi penutupan tambang.",
-        founderNote: "Keputusan Menteri Negara Lingkungan Hidup Nomor 202 Tahun 2004 Tentang Baku Mutu Air Limbah Bagi Usaha dan Kegiatan Pertambangan Bijih Emas dan Tembaga. Lokasi: Minahasa - Sulawesi Utara.",
-        footerText: "&copy; <span id='displayYear'></span> All Rights Reserved By Octa Mining Niaga"
-      },
-      en: {
-        sectionTitle: "Patuari Mining Niaga Portfolio",
-        sectionDescription: "COOPERATIVE FOUNDERS",
-        founderTitle: "Founders of Patuari Mining Niaga Cooperative",
-        founderDescription1: "Feasibility Study of Community Mining by Processing Metal Ores Using Heap Leaching Method with Jinchan Metalic Ore Dressing Agent (Environmental-Friendly Gold Extraction) and Cyanide + GDA (Gold Dressing Agent) Eco-Friendly. Setting Up a Post-Mining Wastewater Treatment Plant (IPAL), infrastructure used to treat toxic liquid waste into safe water for reuse. IPAL can be used to treat industrial waste, such as contaminated liquid waste from mining activities.",
-        founderDescription2: "Note: * Article 2 Paragraph (1) of the Decree of the Minister of Environment No. 202 of 2004, Wastewater from gold and/or copper ore mining activities consists of: A. Wastewater from gold and/or copper ore mining activities, which is water affected by mining activities, causing changes in its quality directly related to the mining activities. B. Wastewater from gold and/or copper ore processing discharged into water bodies. C. Wastewater for post-reclamation activities after mine closure.",
-        founderNote: "Decree of the Minister of Environment No. 202 of 2004 Regarding Wastewater Quality Standards for Gold and Copper Ore Mining Businesses and Activities. Location: Minahasa - North Sulawesi.",
-        footerText: "&copy; <span id='displayYear'></span> All Rights Reserved By Octa Mining Niaga"
-      }
-    };
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => { 
+                if(mobileMenu) mobileMenu.classList.toggle('hidden'); 
+            });
+        }
+        
+        const langBtn = document.getElementById('lang-dropdown-btn');
+        const langMenu = document.getElementById('lang-dropdown-menu');
+        if(langBtn && langMenu) {
+            langBtn.parentElement.addEventListener('click', function(event) {
+                event.stopPropagation();
+                langMenu.classList.toggle('hidden');
+            });
+            window.addEventListener('click', function() {
+                if (!langMenu.classList.contains('hidden')) {
+                    langMenu.classList.add('hidden');
+                }
+            });
+        }
 
-    // Fungsi untuk mengubah bahasa
-    function changeLanguage(lang) {
-      document.getElementById("sectionTitle").innerHTML = content[lang].sectionTitle;
-      document.getElementById("sectionDescription").textContent = content[lang].sectionDescription;
-      document.getElementById("founderTitle").textContent = content[lang].founderTitle;
-      document.getElementById("founderDescription1").textContent = content[lang].founderDescription1;
-      document.getElementById("founderDescription2").textContent = content[lang].founderDescription2;
-      document.getElementById("founderNote").textContent = content[lang].founderNote;
-      document.getElementById("footerText").innerHTML = content[lang].footerText;
+        const translations = {
+            id: {
+                pageTitle: "Portofolio",
+                pageSubtitle: "Dokumentasi proyek dan studi kelayakan yang telah kami laksanakan.",
+                contentTitle: "Studi Kelayakan Pertambangan Rakyat & IPAL",
+                contentDesc1: "Studi kelayakan pertambangan rakyat dengan mengelola bijih logam menggunakan metode <i>Heap Leaching Jinchan Metalic Ore Dressing Agent (Environmental-Friendly Gold Extraction)</i> dan Sianida + GDA (Gold Dressing Agent) yang ramah lingkungan (Eco-Friendly). Termasuk di dalamnya adalah Set Up IPAL (Instalasi Pengolahan Air Limbah) pasca-tambang, sebuah prasarana untuk mengolah limbah cair beracun menjadi air yang aman untuk digunakan kembali, khususnya untuk limbah industri dari aktivitas pertambangan.",
+                noteTitle: "Catatan Penting:",
+                noteDesc: "Sesuai Pasal 2 ayat (1) Keputusan Menteri Negara Lingkungan Hidup No. 202/2004, air limbah kegiatan tambang bijih emas dan/atau tembaga mencakup:",
+                notePointA: "Air limbah dari kegiatan penambangan.",
+                notePointB: "Air limbah dari kegiatan pengolahan bijih.",
+                notePointC: "Air limbah dari kegiatan pasca-reboisasi penutupan tambang.",
+                noteLocation: "<strong>Referensi:</strong> Kepmen LH No. 202/2004.<br><strong>Lokasi Proyek:</strong> Minahasa - Sulawesi Utara.",
+            },
+            en: {
+                pageTitle: "Portfolio",
+                pageSubtitle: "Documentation of projects and feasibility studies we have conducted.",
+                contentTitle: "Feasibility Study of Community Mining & WWTP",
+                contentDesc1: "Feasibility study of community mining by processing metal ores using the <i>Heap Leaching Jinchan Metalic Ore Dressing Agent (Environmental-Friendly Gold Extraction)</i> and Cyanide + GDA (Gold Dressing Agent) which are environmentally friendly (Eco-Friendly). This includes the Set Up of a post-mining Wastewater Treatment Plant (WWTP), an infrastructure to treat toxic liquid waste into water that is safe for reuse, especially for industrial waste from mining activities.",
+                noteTitle: "Important Note:",
+                noteDesc: "According to Article 2 paragraph (1) of the Decree of the Minister of Environment No. 202/2004, wastewater from gold and/or copper ore mining activities includes:",
+                notePointA: "Wastewater from mining activities.",
+                notePointB: "Wastewater from ore processing activities.",
+                notePointC: "Wastewater from post-reforestation mine closure activities.",
+                noteLocation: "<strong>Reference:</strong> Kepmen LH No. 202/2004.<br><strong>Project Location:</strong> Minahasa - North Sulawesi.",
+            }
+        };
 
-      // Simpan preferensi bahasa ke localStorage
-      localStorage.setItem("language", lang);
-    }
+        const setLanguage = (lang) => {
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            if(langBtn) {
+                langBtn.innerHTML = (lang === 'id') 
+                    ? `<img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-5 h-auto"> ID`
+                    : `<img src="https://flagcdn.com/gb.svg" alt="English" class="w-5 h-auto"> EN`;
+            }
+            document.documentElement.lang = lang;
+            localStorage.setItem("language", lang);
+        };
 
-    // Event listener untuk dropdown bahasa
-    document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
-      item.addEventListener('click', function (e) {
-        e.preventDefault();
-        const lang = this.getAttribute('data-lang');
-        changeLanguage(lang);
-      });
+        document.querySelectorAll('.lang-switcher').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
+
+        const savedLang = localStorage.getItem("language") || "id";
+        setLanguage(savedLang);
+
+        const audio = document.getElementById('background-music');
+        if (audio) {
+            audio.addEventListener('loadedmetadata', function() {
+                const musicParts = [
+                    { start: 33, end: 264 },
+                    { start: 264, end: audio.duration }
+                ];
+                let currentPart = parseInt(localStorage.getItem('currentPart')) || 0;
+                if(currentPart >= musicParts.length) currentPart = 0;
+                let currentTime = parseFloat(localStorage.getItem('currentTime')) || musicParts[currentPart].start;
+                audio.currentTime = currentTime;
+                audio.play().catch(e => console.log("Autoplay was prevented by the browser."));
+                audio.addEventListener('timeupdate', () => {
+                    localStorage.setItem('currentTime', audio.currentTime);
+                    localStorage.setItem('currentPart', currentPart);
+                    if (audio.duration && audio.currentTime >= musicParts[currentPart].end) {
+                        currentPart = (currentPart + 1) % musicParts.length;
+                        audio.currentTime = musicParts[currentPart].start;
+                    }
+                });
+            });
+        }
     });
-
-    // Set bahasa awal saat halaman dimuat
-    document.addEventListener("DOMContentLoaded", function () {
-      const savedLang = localStorage.getItem("language") || "id"; // Default bahasa Indonesia
-      changeLanguage(savedLang);
-    });
-  </script>
-  <script>
-    const audio = document.getElementById('background-music');
-const musicParts = [
-  { start: 33, end: 264 }, // menit ke-0.33 - 4.44
-  { start: 264, end: audio.duration } // menit ke-4.44 - akhir lagu
-];
-
-let currentPart = localStorage.getItem('currentPart') || 0;
-let currentTime = localStorage.getItem('currentTime') || musicParts[currentPart].start;
-audio.currentTime = currentTime;
-
-audio.addEventListener('timeupdate', () => {
-  localStorage.setItem('currentTime', audio.currentTime);
-  localStorage.setItem('currentPart', currentPart);
-  if (audio.currentTime >= musicParts[currentPart].end) {
-    currentPart++;
-    if (currentPart >= musicParts.length) {
-      currentPart = 0;
-      audio.currentTime = musicParts[currentPart].start;
-    } else {
-      audio.currentTime = musicParts[currentPart].start;
-    }
-  }
-});
-</script>
+    </script>
 </body>
-
 </html>

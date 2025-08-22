@@ -1,478 +1,382 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id" class="scroll-smooth">
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.jpeg" type="image/x-icon">
-  <title>Koperasi Produsen Energi, Pertambangan dan Perdagangan</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="shortcut icon" href="images/favicon.jpeg" type="image/x-icon">
+    <title>Kontak Kami - Koperasi Produsen Energi, Pertambangan dan Perdagangan</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- Fonts Style -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <!-- Owl Carousel -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- Nice Select -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- Responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
-  <style>
-    /* Modern Navbar Styles */
-    .header_bottom {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(51, 51, 51, 0.98);
-      padding: 10px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
+    <script>
+        // Konfigurasi Kustom Tailwind CSS
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#D4AF37',
+                        'secondary': '#1F2937',
+                        'dark-bg': '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                        trajan: ['Trajan Pro', 'Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
     
-    .navbar-brand img {
-      height: 50px;
-      transition: all 0.3s;
-    }
-    
-    .nav-item {
-      margin: 0 5px;
-      position: relative;
-    }
-    
-    .nav-link {
-      color: white !important;
-      font-weight: 600;
-      font-size: 14px;
-      padding: 12px 18px !important;
-      text-transform: uppercase;
-      transition: all 0.3s;
-      letter-spacing: 0.5px;
-      position: relative;
-    }
-    
-    .nav-link:hover {
-      color: #fff !important;
-      transform: translateY(-2px);
-    }
-    
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 8px;
-      left: 18px;
-      width: 0;
-      height: 2px;
-      background: #fff;
-      transition: width 0.3s ease;
-    }
-    
-    .nav-link:hover::after {
-      width: calc(100% - 36px);
-    }
-    
-    .dropdown-menu {
-      background-color: rgba(68, 68, 68, 0.95);
-      border: none;
-      border-radius: 8px;
-      padding: 10px 0;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-    
-    .dropdown-item {
-      color: white !important;
-      padding: 10px 20px;
-      transition: all 0.2s;
-      font-weight: 500;
-    }
-    
-    .dropdown-item:hover {
-      background-color: rgba(85, 85, 85, 0.7);
-      padding-left: 25px;
-    }
-    
-    .navbar-toggler {
-      border: none;
-      padding: 0.5rem;
-    }
-    
-    .navbar-toggler:focus {
-      outline: none;
-      box-shadow: none;
-    }
-    
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-      width: 1.5em;
-      height: 1.5em;
-    }
-
-    /* Gaya untuk bagian kontak */
-    .contact-section {
-      padding: 60px 0;
-      background: #f9f9f9;
-    }
-    .contact-box {
-      text-align: center;
-      padding: 30px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      margin-bottom: 20px;
-      height: 100%;
-    }
-    .contact-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .contact-box i {
-      font-size: 40px;
-      color: #007bff;
-      margin-bottom: 20px;
-    }
-    .contact-box h5 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-    .contact-box a {
-      color: #333;
-      text-decoration: none;
-      font-size: 16px;
-      word-wrap: break-word;
-    }
-    .contact-box a:hover {
-      color: #007bff;
-    }
-
-    /* Footer Styles to Match */
-    .footer_section {
-      background: #333;
-      color: white;
-      padding: 25px 0;
-      margin-top: 50px;
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .footer_section p {
-      margin: 0;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    /* Responsif untuk mode mobile */
-    @media (max-width: 992px) {
-      .navbar-collapse {
-        background: rgba(51, 51, 51, 0.98);
-        padding: 15px;
-        margin-top: 10px;
-        border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      }
-      
-      .nav-item {
-        margin: 5px 0;
-      }
-      
-      .dropdown-menu {
-        background-color: rgba(85, 85, 85, 0.95);
-        margin-left: 15px;
-      }
-      
-      .navbar-brand img {
-        height: 40px;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .nav-link {
-        font-size: 13px;
-        padding: 10px 15px !important;
-      }
-      
-      .navbar-brand img {
-        height: 35px;
-      }
-      
-      .contact-box {
-        padding: 20px;
-      }
-      .contact-box h5 {
-        font-size: 18px;
-      }
-      .contact-box a {
-        font-size: 14px;
-      }
-      
-      .footer_section p {
-        font-size: 12px;
-      }
-    }
-  </style>
+    <style>
+        /* Style Global Konsisten */
+        @font-face {
+            font-family: 'Trajan Pro';
+            src: url('fonts/TrajanPro-Regular.ttf') format('truetype');
+            font-weight: normal; font-style: normal;
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+        .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-section.visible { opacity: 1; transform: translateY(0); }
+        #navbar { position: sticky; top: 0; background-color: rgba(17, 24, 39, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: #D4AF37; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: #D4AF37; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 999; }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: #b8860b; transform: translateY(-5px); }
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: #D4AF37; z-index: 1001; }
+        .page-header {
+            padding: 12rem 0 6rem 0;
+            background-color: #111827;
+            background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=1770&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .page-title {
+            font-family: 'Trajan Pro', 'Cinzel', serif;
+        }
+    </style>
 </head>
 
-<body>
-  <audio id="background-music" autoplay loop>
-    <source src="images/WhatsApp Audio 2025-03-22 at 01.08.14.mpeg" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-
-  <!-- Modern Navbar -->
-  <div class="header_bottom">
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg custom_nav-container">
-        <a class="navbar-brand" href="index.html">
-          <img src="" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Top Management
-              </a>
-              <div class="dropdown-menu transparent-box-dropdown" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="service.html">Penasehat</a>
-                            <a class="dropdown-item" href="advisor pengawas.html">Pendiri</a>
-                            <a class="dropdown-item" href="legal koperasi.html">Pengurus</a>
-                            <a class="dropdown-item" href="dewan pengawas.html">Pengawas</a>
-                            <a class="dropdown-item" href="anggota.html">Anggota</a>
+<body class="font-sans text-gray-800">
+    <audio id="background-music" autoplay loop>
+        <source src="images/WhatsApp Audio 2025-03-22 at 01.08.14.mpeg" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="progress-bar"></div>
+    <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    
+    <nav id="navbar" class="w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex-shrink-0">
+                    <img src="images/logo-placeholder-white.png" alt="Logo Koperasi" class="h-12 w-auto">
+                </a>
+                <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navHome">Home</a>
+                    <a href="about.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navAbout">About</a>
+                    <div class="relative group">
+                        <button class="text-white hover:text-primary flex items-center nav-link font-medium" data-translate-key="navTopManagement">Top Management <i class="fas fa-chevron-down text-xs ml-2 mt-1 transition-transform group-hover:rotate-180"></i></button>
+                        <div class="absolute hidden group-hover:block w-48 bg-dark-bg/90 mt-2 rounded-md shadow-lg overflow-hidden z-50">
+                            <a href="service.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navAdvisor">Penasehat</a>
+                            <a href="advisor pengawas.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navFounder">Pendiri</a>
+                            <a href="legal koperasi.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navBoard">Pengurus</a>
+                            <a href="dewan pengawas.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navSupervisor">Pengawas</a>
+                            <a href="anggota.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navMember">Anggota</a>
                         </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="team.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portofolio.html">Portofolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="berita.html">Berita</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="galeri.html">Galeri</a>
-          </li>
-            <!-- Language Dropdown -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" 
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="https://flagcdn.com/id.svg" alt="Indonesia" style="width: 20px; height: auto;"> ID
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
-                <a class="dropdown-item" href="#" data-lang="id">
-                  <img src="https://flagcdn.com/id.svg" alt="Indonesia" style="width: 20px; height: auto;"> Indonesia
-                </a>
-                <a class="dropdown-item" href="#" data-lang="en">
-                  <img src="https://flagcdn.com/gb.svg" alt="English" style="width: 20px; height: auto;"> English
-                </a>
-              </div>
-            </li>
-          </ul>
+                    </div>
+                    <a href="team.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navContact">Contact</a>
+                    <a href="portofolio.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navPortfolio">Portofolio</a>
+                    <a href="berita.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navNews">Berita</a>
+                    <a href="galeri.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navGallery">Galeri</a>
+                    <div class="relative">
+                        <button id="lang-dropdown-btn" class="text-white flex items-center gap-2 nav-link font-medium"></button>
+                        <div id="lang-dropdown-menu" class="absolute hidden w-40 bg-dark-bg/90 mt-2 rounded-md shadow-lg overflow-hidden right-0 z-50">
+                            <a href="#" class="lang-switcher block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors flex items-center" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-5 h-auto mr-2"> Indonesia</a>
+                            <a href="#" class="lang-switcher block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors flex items-center" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-5 h-auto mr-2"> English</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </nav>
-    </div>
-  </div>
-
-  <!-- Kontak Section -->
-  <section class="contact-section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2 id="contactTitle">
-          Kontak Kami
-        </h2>
-        <p id="contactDescription">
-          Hubungi kami melalui media sosial atau email di bawah ini:
-        </p>
-      </div>
-      <div class="row">
-        <!-- Instagram -->
-        <div class="col-md-3 col-sm-6 mx-auto">
-          <div class="contact-box">
-            <i class="fab fa-instagram"></i>
-            <h5 id="instagramTitle">Instagram</h5>
-            <a href="#" data-toggle="modal" data-target="#comingSoonModal" id="instagramLink">Cooming Soon</a>
-          </div>
+        <div id="mobile-menu" class="lg:hidden hidden bg-dark-bg/95">
+             <div class="px-6 pt-2 pb-6 space-y-2">
+                 <a href="index.html" class="block text-white hover:text-primary py-2" data-translate-key="navHome">Home</a>
+                 <a href="about.html" class="block text-white hover:text-primary py-2" data-translate-key="navAbout">About</a>
+                 <button id="mobile-top-btn" class="w-full text-left text-white hover:text-primary flex items-center justify-between py-2" data-translate-key="navTopManagement">Top Management <i id="mobile-top-arrow" class="fas fa-chevron-down text-sm"></i></button>
+                 <div id="mobile-top-menu" class="hidden flex-col pl-4 space-y-1 border-l-2 border-primary/50">
+                     <a href="service.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navAdvisor">Penasehat</a>
+                     <a href="advisor pengawas.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navFounder">Pendiri</a>
+                     <a href="legal koperasi.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navBoard">Pengurus</a>
+                     <a href="dewan pengawas.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navSupervisor">Pengawas</a>
+                     <a href="anggota.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navMember">Anggota</a>
+                 </div>
+                 <a href="team.html" class="block text-white hover:text-primary py-2" data-translate-key="navContact">Contact</a>
+                 <a href="portofolio.html" class="block text-white hover:text-primary py-2" data-translate-key="navPortfolio">Portofolio</a>
+                 <a href="berita.html" class="block text-white hover:text-primary py-2" data-translate-key="navNews">Berita</a>
+                 <a href="galeri.html" class="block text-white hover:text-primary py-2" data-translate-key="navGallery">Galeri</a>
+                 <div class="border-t border-gray-700 mt-4 pt-4">
+                     <div class="flex items-center justify-center gap-4">
+                         <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-6 h-auto"> ID</a>
+                         <div class="w-px h-6 bg-gray-700"></div>
+                         <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-6 h-auto"> EN</a>
+                     </div>
+                 </div>
+             </div>
         </div>
-        <!-- WhatsApp -->
-        <div class="col-md-3 col-sm-6 mx-auto">
-          <div class="contact-box">
-            <i class="fab fa-whatsapp"></i>
-            <h5 id="whatsappTitle">WhatsApp</h5>
-            <a href="" target="_blank" id="whatsappLink">XXXXX</a>
-          </div>
+    </nav>
+    
+    <main id="top">
+        <header class="page-header">
+            <div class="container mx-auto px-6 text-center fade-in-section">
+                <h1 class="text-4xl md:text-6xl font-bold text-white page-title uppercase tracking-wider" data-translate-key="pageTitle">Hubungi Kami</h1>
+                <p class="text-lg text-gray-300 mt-4 max-w-2xl mx-auto" data-translate-key="pageSubtitle">Kami siap membantu Anda. Silakan hubungi kami melalui salah satu saluran di bawah ini.</p>
+            </div>
+        </header>
+
+        <section class="py-20 lg:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center flex flex-col items-center transform hover:-translate-y-2 transition-transform duration-300 fade-in-section">
+                        <div class="text-5xl text-primary mb-5">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-2" data-translate-key="instagramTitle">Instagram</h3>
+                        <p class="text-gray-500" data-translate-key="instagramHandle">Segera Hadir</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center flex flex-col items-center transform hover:-translate-y-2 transition-transform duration-300 fade-in-section" style="animation-delay: 0.2s;">
+                        <div class="text-5xl text-primary mb-5">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-2" data-translate-key="whatsappTitle">WhatsApp</h3>
+                        <a href="https://wa.me/62XXXXXXXXXX" target="_blank" class="text-gray-600 hover:text-primary transition-colors">XXXXX</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center flex flex-col items-center transform hover:-translate-y-2 transition-transform duration-300 fade-in-section" style="animation-delay: 0.4s;">
+                        <div class="text-5xl text-primary mb-5">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-2" data-translate-key="emailTitle">Email</h3>
+                        <a href="mailto:info@octamining.coop" class="text-gray-600 hover:text-primary transition-colors break-all">info@octamining.coop</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-in-section">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.892699920153!2d107.6162386759109!3d-6.903437967556707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64c5e82f073%3A0x28f1544a04918663!2sGedung%20Sate!5e0!3m2!1sen!2sid!4v1724365922874!5m2!1sen!2sid" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+        
+    </main>
+    
+    <footer class="bg-dark-bg text-gray-300 py-16 w-full">
+         <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <img src="images/logo-placeholder-white.png" alt="Logo Koperasi" class="h-14 w-auto mb-4">
+                    <p class="text-sm text-gray-400" data-translate-key="footerDesc">Koperasi produsen energi terbarukan, pertambangan, dan perdagangan yang inovatif dan ramah lingkungan.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-4" data-translate-key="footerLinksTitle">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-primary transition-colors" data-translate-key="footerAbout">Tentang Kami</a></li>
+                        <li><a href="portofolio.html" class="hover:text-primary transition-colors" data-translate-key="footerPortfolio">Portofolio</a></li>
+                        <li><a href="berita.html" class="hover:text-primary transition-colors" data-translate-key="footerNews">Berita</a></li>
+                        <li><a href="team.html" class="hover:text-primary transition-colors" data-translate-key="footerContact">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-4" data-translate-key="footerContactTitle">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i><span data-translate-key="footerAddress">XXXXX</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone mr-3 text-primary"></i><span>XXXXX</span></li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3 text-primary"></i><span>XXXXX</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-4" data-translate-key="footerSocialTitle">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-secondary hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-secondary hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-secondary hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-secondary hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-500"><p data-translate-key="footerCopyright">&copy; <span id="displayYear"></span> Octa Mining Niaga. All Rights Reserved.</p></div>
         </div>
-        <!-- Email -->
-        <div class="col-md-3 col-sm-6 mx-auto">
-          <div class="contact-box">
-            <i class="fas fa-envelope"></i>
-            <h5 id="emailTitle">Email</h5>
-            <a href="" id="emailLink">XXXXX</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Modal Coming Soon -->
-  <div class="modal fade" id="comingSoonModal" tabindex="-1" aria-labelledby="comingSoonModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="comingSoonModalLabel">Info</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Coming Soon!
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Skrip Interaktivitas Dasar ---
+        document.getElementById('displayYear').textContent = new Date().getFullYear();
+        const backToTopButton = document.querySelector('.back-to-top');
+        const progressBar = document.querySelector('.progress-bar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                if(backToTopButton) backToTopButton.classList.add('visible');
+            } else {
+                if(backToTopButton) backToTopButton.classList.remove('visible');
+            }
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if(progressBar) progressBar.style.width = scrollPercent + '%';
+        });
 
-  <!-- Footer Section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p id="footerText">
-        &copy; <span id="displayYear"></span> All Rights Reserved By Octa Mining Niaga
-      </p>
-    </div>
-  </footer>
-
-  <!-- jQuery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- Popper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <!-- Bootstrap JS -->
-  <script src="js/bootstrap.js"></script>
-  <!-- Owl Carousel -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <!-- Nice Select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
-  <!-- Custom JS -->
-  <script src="js/custom.js"></script>
-
-  <script>
-    // Data konten dalam dua bahasa
-    const content = {
-      id: {
-        contactTitle: "Kontak Kami",
-        contactDescription: "Hubungi kami melalui media sosial atau email di bawah ini:",
-        instagramTitle: "Instagram",
-        instagramLink: "Cooming Soon",
-        whatsappTitle: "WhatsApp",
-        whatsappLink: "XXXXX",
-        facebookTitle: "Facebook",
-        facebookLink: "Cooming Soon",
-        emailTitle: "Email",
-        emailLink: "XXXXX",
-        footerText: "&copy; <span id='displayYear'></span> All Rights Reserved By Octa Mining Niaga"
-      },
-      en: {
-        contactTitle: "Contact Us",
-        contactDescription: "Reach out to us via social media or email below:",
-        instagramTitle: "Instagram",
-        instagramLink: "Coming Soon",
-        whatsappTitle: "WhatsApp",
-        whatsappLink: "XXXXX",
-        facebookTitle: "Facebook",
-        facebookLink: "Coming Soon",
-        emailTitle: "Email",
-        emailLink: "XXXXX",
-        footerText: "&copy; <span id='displayYear'></span> All Rights Reserved By Octa Mining Niaga"
-      }
-    };
-
-    // Fungsi untuk mengubah bahasa
-    function changeLanguage(lang) {
-      document.getElementById("contactTitle").textContent = content[lang].contactTitle;
-      document.getElementById("contactDescription").textContent = content[lang].contactDescription;
-      document.getElementById("instagramTitle").textContent = content[lang].instagramTitle;
-      document.getElementById("instagramLink").textContent = content[lang].instagramLink;
-      document.getElementById("whatsappTitle").textContent = content[lang].whatsappTitle;
-      document.getElementById("whatsappLink").textContent = content[lang].whatsappLink;
-      document.getElementById("facebookTitle").textContent = content[lang].facebookTitle;
-      document.getElementById("facebookLink").textContent = content[lang].facebookLink;
-      document.getElementById("emailTitle").textContent = content[lang].emailTitle;
-      document.getElementById("emailLink").textContent = content[lang].emailLink;
-      document.getElementById("footerText").innerHTML = content[lang].footerText;
-
-      // Simpan preferensi bahasa ke localStorage
-      localStorage.setItem("language", lang);
-    }
-
-    // Event listener untuk dropdown bahasa
-    document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
-      item.addEventListener('click', function (e) {
-        e.preventDefault();
-        const lang = this.getAttribute('data-lang');
-        changeLanguage(lang);
-      });
-    });
-
-    // Set bahasa awal saat halaman dimuat
-    document.addEventListener("DOMContentLoaded", function () {
-      const savedLang = localStorage.getItem("language") || "id"; // Default bahasa Indonesia
-      changeLanguage(savedLang);
-    });
-  </script>
-  <script>
-    const audio = document.getElementById('background-music');
-    const musicParts = [
-      { start: 33, end: 264 }, // menit ke-0.33 - 4.44
-      { start: 264, end: audio.duration } // menit ke-4.44 - akhir lagu
-    ];
-
-    let currentPart = localStorage.getItem('currentPart') || 0;
-    let currentTime = localStorage.getItem('currentTime') || musicParts[currentPart].start;
-    audio.currentTime = currentTime;
-
-    audio.addEventListener('timeupdate', () => {
-      localStorage.setItem('currentTime', audio.currentTime);
-      localStorage.setItem('currentPart', currentPart);
-      if (audio.currentTime >= musicParts[currentPart].end) {
-        currentPart++;
-        if (currentPart >= musicParts.length) {
-          currentPart = 0;
-          audio.currentTime = musicParts[currentPart].start;
-        } else {
-          audio.currentTime = musicParts[currentPart].start;
+        // --- Menu Mobile ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => { 
+                if(mobileMenu) mobileMenu.classList.toggle('hidden'); 
+            });
         }
-      }
+        const mobileTopBtn = document.getElementById('mobile-top-btn');
+        const mobileTopMenu = document.getElementById('mobile-top-menu');
+        const mobileTopArrow = document.getElementById('mobile-top-arrow');
+        if(mobileTopBtn) {
+            mobileTopBtn.addEventListener('click', () => {
+                mobileTopMenu.classList.toggle('hidden');
+                mobileTopArrow.classList.toggle('rotate-180');
+            });
+        }
+        
+        // --- Animasi Fade-in ---
+        const fadeElements = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => observer.observe(el));
+
+        // --- Dropdown Bahasa ---
+        const langBtn = document.getElementById('lang-dropdown-btn');
+        const langMenu = document.getElementById('lang-dropdown-menu');
+        if(langBtn && langMenu) {
+            langBtn.parentElement.addEventListener('click', function(event) {
+                event.stopPropagation();
+                langMenu.classList.toggle('hidden');
+            });
+            window.addEventListener('click', function() {
+                if (!langMenu.classList.contains('hidden')) {
+                    langMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        // --- Konten Translasi ---
+        const translations = {
+            id: {
+                navHome: "Home", navAbout: "Tentang", navTopManagement: "Manajemen Puncak", navAdvisor: "Penasehat", navFounder: "Pendiri", navBoard: "Pengurus", navSupervisor: "Pengawas", navMember: "Anggota", navContact: "Kontak", navPortfolio: "Portofolio", navNews: "Berita", navGallery: "Galeri",
+                pageTitle: "Hubungi Kami", pageSubtitle: "Kami siap membantu Anda. Silakan hubungi kami melalui salah satu saluran di bawah ini.",
+                instagramTitle: "Instagram", instagramHandle: "Segera Hadir",
+                whatsappTitle: "WhatsApp",
+                emailTitle: "Email",
+                footerDesc: "Koperasi produsen energi terbarukan, pertambangan, dan perdagangan yang inovatif dan ramah lingkungan.", 
+                footerLinksTitle: "Tautan Cepat", 
+                footerAbout: "Tentang Kami", 
+                footerPortfolio: "Portofolio", 
+                footerNews: "Berita", 
+                footerContact: "Hubungi Kami", 
+                footerContactTitle: "Hubungi Kami", 
+                footerAddress: "XXXXX", 
+                footerSocialTitle: "Ikuti Kami", 
+                footerCopyright: "&copy; {year} Octa Mining Niaga. All Rights Reserved.",
+            },
+            en: {
+                navHome: "Home", navAbout: "About", navTopManagement: "Top Management", navAdvisor: "Advisor", navFounder: "Founder", navBoard: "Board", navSupervisor: "Supervisor", navMember: "Member", navContact: "Contact", navPortfolio: "Portfolio", navNews: "News", navGallery: "Gallery",
+                pageTitle: "Contact Us", pageSubtitle: "We are ready to help you. Please contact us through one of the channels below.",
+                instagramTitle: "Instagram", instagramHandle: "Coming Soon",
+                whatsappTitle: "WhatsApp",
+                emailTitle: "Email",
+                footerDesc: "An innovative and environmentally friendly cooperative producer of renewable energy, mining, and trade.", 
+                footerLinksTitle: "Quick Links", 
+                footerAbout: "About Us", 
+                footerPortfolio: "Portfolio", 
+                footerNews: "News", 
+                footerContact: "Contact Us", 
+                footerContactTitle: "Contact Us", 
+                footerAddress: "XXXXX", 
+                footerSocialTitle: "Follow Us", 
+                footerCopyright: "&copy; {year} Octa Mining Niaga. All Rights Reserved.",
+            }
+        };
+
+        const setLanguage = (lang) => {
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    let text = translations[lang][key];
+                    if(key === 'footerCopyright'){
+                        text = text.replace('{year}', new Date().getFullYear());
+                    }
+                    element.innerHTML = text;
+                }
+            });
+            if(langBtn) {
+                langBtn.innerHTML = (lang === 'id') 
+                    ? `<img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-5 h-auto"> ID`
+                    : `<img src="https://flagcdn.com/gb.svg" alt="English" class="w-5 h-auto"> EN`;
+            }
+            document.documentElement.lang = lang;
+            localStorage.setItem("language", lang);
+        };
+
+        document.querySelectorAll('.lang-switcher').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
+
+        const savedLang = localStorage.getItem("language") || "id";
+        setLanguage(savedLang);
+
+        const audio = document.getElementById('background-music');
+        if (audio) {
+            audio.addEventListener('loadedmetadata', function() {
+                const musicParts = [{ start: 33, end: 264 }, { start: 264, end: audio.duration }];
+                let currentPart = parseInt(localStorage.getItem('currentPart')) || 0;
+                if(currentPart >= musicParts.length) currentPart = 0;
+                let currentTime = parseFloat(localStorage.getItem('currentTime')) || musicParts[currentPart].start;
+                audio.currentTime = currentTime;
+                audio.play().catch(e => console.log("Autoplay was prevented by the browser."));
+                audio.addEventListener('timeupdate', () => {
+                    localStorage.setItem('currentTime', audio.currentTime);
+                    localStorage.setItem('currentPart', currentPart);
+                    if (audio.duration && audio.currentTime >= musicParts[currentPart].end) {
+                        currentPart = (currentPart + 1) % musicParts.length;
+                        audio.currentTime = musicParts[currentPart].start;
+                    }
+                });
+            });
+        }
     });
-  </script>
+    </script>
 </body>
 </html>
