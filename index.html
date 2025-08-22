@@ -55,8 +55,18 @@
             src: url('fonts/TrajanPro-Regular.ttf') format('truetype');
             font-weight: normal; font-style: normal;
         }
-        .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in-section.visible { opacity: 1; transform: translateY(0); }
+        /* Style untuk Animasi Scroll */
+        .fade-in-section { 
+            opacity: 0; 
+            transform: translateY(40px); 
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+            will-change: opacity, transform;
+        }
+        .fade-in-section.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
         #navbar { transition: background-color 0.4s ease, box-shadow 0.4s ease; }
         .nav-link { position: relative; transition: color 0.3s ease; }
         .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: #D4AF37; transition: width 0.3s ease; }
@@ -96,7 +106,7 @@
              <div class="container mx-auto px-6 py-4">
                 <div class="flex justify-between items-center">
                     <a href="index.html" class="flex-shrink-0">
-                        <img src="images/logo octa removebg.png"Logo Koperasi" class="h-12 w-auto">
+                        <img src="images/remove octa.png" alt="Logo Koperasi" class="h-12 w-auto">
                     </a>
                     <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
                     
@@ -119,8 +129,7 @@
                         <a href="galeri.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navGallery">Galeri</a>
                         
                         <div class="relative">
-                            <button id="lang-dropdown-btn" class="text-white flex items-center gap-2 nav-link font-medium">
-                                </button>
+                            <button id="lang-dropdown-btn" class="text-white flex items-center gap-2 nav-link font-medium"></button>
                             <div id="lang-dropdown-menu" class="absolute hidden w-40 bg-dark-bg/90 mt-2 rounded-md shadow-lg overflow-hidden right-0 z-50">
                                 <a href="#" class="lang-switcher block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors flex items-center" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-5 h-auto mr-2"> Indonesia</a>
                                 <a href="#" class="lang-switcher block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors flex items-center" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-5 h-auto mr-2"> English</a>
@@ -149,16 +158,12 @@
 
                     <div class="border-t border-gray-700 mt-4 pt-4">
                         <div class="flex items-center justify-center gap-4">
-                            <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="id">
-                                <img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-6 h-auto"> ID
-                            </a>
+                            <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-6 h-auto"> ID</a>
                             <div class="w-px h-6 bg-gray-700"></div>
-                            <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="en">
-                                <img src="https://flagcdn.com/gb.svg" alt="English" class="w-6 h-auto"> EN
-                            </a>
+                            <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-6 h-auto"> EN</a>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
         </nav>
 
@@ -172,28 +177,27 @@
         </div>
     </header>
 
-        <main id="top">
+    <main>
         <section id="profile" class="py-20 lg:py-28 bg-white fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display">Profil Koperasi</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="profileTitle">Profil Koperasi</h2>
                     <div class="w-24 h-1 bg-primary mx-auto"></div>
                 </div>
                 <div class="max-w-4xl mx-auto text-center">
-                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg" data-translate-key="profileDesc1">
                         Koperasi Octa Mining Niaga penggerak perekonomian rakyat secara <strong>Integrated Corporation</strong>. Digitalisasi Koperasi Octa Mining Niaga mulai melakukan transformasi digital secara bertahap, hadir untuk membantu kesejahteraan masyarakat di sekitar dan terus berupaya berinovasi dalam pengembangan koperasi yang lebih modern.
                     </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                    <p class="text-gray-600 mb-8 leading-relaxed text-lg" data-translate-key="profileDesc2">
                         Octa Mining Niaga adalah Koperasi Produsen Energi Terbarukan, Pertambangan, dan Perdagangan yang mengubah paradigma di Indonesia dengan menerapkan prinsip <strong>Eco-friendly</strong> yang inovatif. Bertujuan untuk mewujudkan cita-cita pada Pasal 33 Ayat (3) Undang-Undang Dasar (UUD) 1945, yang menjelaskan bahwa bumi, air, dan kekayaan alam di dalamnya dikuasai oleh negara dan dimanfaatkan untuk kesejahteraan rakyat. Serta menerapkan konsep rantai pasok dalam dunia perdagangan sub-sektor Mikro, UMKM, dan Makro dalam rangka mendukung program strategis pemerintah untuk meningkatkan kesejahteraan masyarakat luas dan tunas-tunas bangsa Indonesia.
                     </p>
-                    <p class="text-xl font-bold text-secondary mb-2"># Indonesia Emas #</p>
-                    <p class="text-lg italic text-gray-500">"Your Trade Solution"</p>
+                    <p class="text-xl font-bold text-secondary mb-2" data-translate-key="tagline1"># Indonesia Emas #</p>
+                    <p class="text-lg italic text-gray-500" data-translate-key="tagline2">"Your Trade Solution"</p>
                 </div>
             </div>
         </section>
 
-    <main>
-        <section id="about" class="py-20 lg:py-28 bg-white fade-in-section">
+        <section id="about" class="py-20 lg:py-28 bg-gray-50 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="aboutTitle">Sekilas Tentang Kami</h2>
@@ -203,10 +207,10 @@
                     <div>
                         <h3 class="text-2xl font-semibold text-secondary mb-4" data-translate-key="aboutSubtitle">Koperasi Octa Mining Niaga</h3>
                         <p class="text-gray-600 mb-6 leading-relaxed" data-translate-key="aboutDesc1">
-                            Adalah penggerak perekonomian rakyat melalui *Integrated Corporation* dan transformasi digital. Kami hadir untuk meningkatkan kesejahteraan masyarakat dengan inovasi modern dalam pengembangan koperasi.
+                            Adalah penggerak perekonomian rakyat melalui <i>Integrated Corporation</i> dan transformasi digital. Kami hadir untuk meningkatkan kesejahteraan masyarakat dengan inovasi modern dalam pengembangan koperasi.
                         </p>
                         <p class="text-gray-600 leading-relaxed" data-translate-key="aboutDesc2">
-                            Kami adalah Koperasi Produsen yang menerapkan prinsip *eco-friendly* dan inovatif, bertujuan mewujudkan amanat Pasal 33 Ayat (3) UUD 1945.
+                            Kami adalah Koperasi Produsen yang menerapkan prinsip <i>eco-friendly</i> dan inovatif, bertujuan mewujudkan amanat Pasal 33 Ayat (3) UUD 1945.
                         </p>
                     </div>
                     <div class="space-y-6">
@@ -220,13 +224,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-16">
-                    <a href="about.html" class="cta-button" data-translate-key="aboutButton">Pelajari Lebih Lanjut</a>
-                </div>
             </div>
         </section>
 
-        <section id="portofolio" class="py-20 lg:py-28 bg-gray-50 fade-in-section">
+        <section id="portofolio" class="py-20 lg:py-28 bg-white fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="portfolioTitle">Portofolio Unggulan</h2>
@@ -267,7 +268,7 @@
             </div>
         </section>
 
-        <section id="berita" class="py-20 lg:py-28 bg-white fade-in-section">
+        <section id="berita" class="py-20 lg:py-28 bg-gray-50 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="newsSectionTitle">Berita & Informasi Terbaru</h2>
@@ -305,39 +306,39 @@
             </div>
         </section>
 
-       <section class="py-20 lg:py-28 bg-gray-50 fade-in-section">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="leadershipTitle">Kepemimpinan Kami</h2>
-            <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-translate-key="leadershipDesc">Tim kami terdiri dari para profesional berpengalaman yang berdedikasi untuk memajukan koperasi dan memberikan nilai terbaik bagi anggota.</p>
-        </div>
-        
-        <div class="flex flex-wrap justify-center gap-10">
-            
-            <div class="bg-white rounded-lg shadow-xl p-6 text-center w-full max-w-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
-                <div class="w-full h-48 mb-6 overflow-hidden rounded-lg shadow-md">
-                   <img src="images/t1.png" alt="Randi Mamola" class="w-full h-full object-cover">
+       <section class="py-20 lg:py-28 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="leadershipTitle">Kepemimpinan Kami</h2>
+                    <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-translate-key="leadershipDesc">Tim kami terdiri dari para profesional berpengalaman yang berdedikasi untuk memajukan koperasi dan memberikan nilai terbaik bagi anggota.</p>
                 </div>
-                <h5 class="font-trajan font-bold text-xl mb-1 text-secondary">Randi Mamola</h5>
-                <h6 class="text-primary font-semibold text-md" data-translate-key="treasurer">Bendahara</h6>
-            </div>
+                
+                <div class="flex flex-wrap justify-center gap-10">
+                    
+                    <div class="bg-white rounded-lg shadow-xl p-6 text-center w-full max-w-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
+                        <div class="w-full h-48 mb-6 overflow-hidden rounded-lg shadow-md">
+                           <img src="images/t1.png" alt="Randi Mamola" class="w-full h-full object-cover">
+                        </div>
+                        <h5 class="font-trajan font-bold text-xl mb-1 text-secondary">Randi Mamola</h5>
+                        <h6 class="text-primary font-semibold text-md" data-translate-key="treasurer">Bendahara</h6>
+                    </div>
 
-            <div class="bg-white rounded-lg shadow-xl p-6 text-center w-full max-w-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
-                <div class="w-full h-48 mb-6 overflow-hidden rounded-lg shadow-md">
-                   <img src="images/t3.png" alt="Muhammad Khaliq Mantiri" class="w-full h-full object-cover">
+                    <div class="bg-white rounded-lg shadow-xl p-6 text-center w-full max-w-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
+                        <div class="w-full h-48 mb-6 overflow-hidden rounded-lg shadow-md">
+                           <img src="images/t3.png" alt="Muhammad Khaliq Mantiri" class="w-full h-full object-cover">
+                        </div>
+                        <h5 class="font-trajan font-bold text-xl mb-1 text-secondary">Muhammad Khaliq Mantiri</h5>
+                        <h6 class="text-primary font-semibold text-md" data-translate-key="secretary">Sekretaris</h6>
+                    </div>
+
                 </div>
-                <h5 class="font-trajan font-bold text-xl mb-1 text-secondary">Muhammad Khaliq Mantiri</h5>
-                <h6 class="text-primary font-semibold text-md" data-translate-key="secretary">Sekretaris</h6>
+                <div class="text-center mt-16">
+                    <a href="service.html" class="cta-button" data-translate-key="leadershipButton">Lihat Seluruh Tim Manajemen</a>
+                </div>
             </div>
+        </section>
 
-        </div>
-        <div class="text-center mt-16">
-            <a href="service.html" class="cta-button" data-translate-key="leadershipButton">Lihat Seluruh Tim Manajemen</a>
-        </div>
-    </div>
-</section>
-
-        <section class="py-20 lg:py-28 bg-white fade-in-section">
+        <section class="py-20 lg:py-28 bg-gray-50 fade-in-section">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-secondary font-display" data-translate-key="partnersTitle">Mitra Strategis & Perbankan</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12 items-center">
@@ -470,23 +471,33 @@
             }
 
             // =======================================================
-            // BAGIAN 3: SKRIP FUNGSI TRANSLATE (INTI MASALAH)
+            // BAGIAN 3: SKRIP FUNGSI TRANSLATE
             // =======================================================
             const translations = {
                 id: {
                     navHome: "Home", navAbout: "Tentang", navTopManagement: "Manajemen Puncak", navAdvisor: "Penasehat", navFounder: "Pendiri", navBoard: "Pengurus", navSupervisor: "Pengawas", navMember: "Anggota", navContact: "Kontak", navPortfolio: "Portofolio", navNews: "Berita", navGallery: "Galeri", 
                     heroTitle: "Energi, Pertambangan & Perdagangan", heroSubtitle: "Bermitra bersama kami untuk menjadi bagian dari koperasi modern yang mendorong perubahan menuju Indonesia Emas.", heroButton: "Jelajahi Lebih Lanjut", 
+                    profileTitle: "Profil Koperasi",
+                    profileDesc1: "Koperasi Octa Mining Niaga penggerak perekonomian rakyat secara <strong>Integrated Corporation</strong>. Digitalisasi Koperasi Octa Mining Niaga mulai melakukan transformasi digital secara bertahap, hadir untuk membantu kesejahteraan masyarakat di sekitar dan terus berupaya berinovasi dalam pengembangan koperasi yang lebih modern.",
+                    profileDesc2: "Octa Mining Niaga adalah Koperasi Produsen Energi Terbarukan, Pertambangan, dan Perdagangan yang mengubah paradigma di Indonesia dengan menerapkan prinsip <strong>Eco-friendly</strong> yang inovatif. Bertujuan untuk mewujudkan cita-cita pada Pasal 33 Ayat (3) Undang-Undang Dasar (UUD) 1945, yang menjelaskan bahwa bumi, air, dan kekayaan alam di dalamnya dikuasai oleh negara dan dimanfaatkan untuk kesejahteraan rakyat. Serta menerapkan konsep rantai pasok dalam dunia perdagangan sub-sektor Mikro, UMKM, dan Makro dalam rangka mendukung program strategis pemerintah untuk meningkatkan kesejahteraan masyarakat luas dan tunas-tunas bangsa Indonesia.",
+                    tagline1: "# Indonesia Emas #",
+                    tagline2: '"Your Trade Solution"',
                     aboutTitle: "Sekilas Tentang Kami", aboutSubtitle: "Koperasi Octa Mining Niaga", aboutDesc1: "Adalah penggerak perekonomian rakyat melalui <i>Integrated Corporation</i> dan transformasi digital. Kami hadir untuk meningkatkan kesejahteraan masyarakat dengan inovasi modern dalam pengembangan koperasi.", aboutDesc2: "Kami adalah Koperasi Produsen yang menerapkan prinsip <i>eco-friendly</i> dan inovatif, bertujuan mewujudkan amanat Pasal 33 Ayat (3) UUD 1945.", 
                     visionTitle: '<i class="fas fa-eye text-primary mr-3"></i> Visi Kami', visionText: "Menjadikan koperasi Integrated Coorporation, serta mendukung unit-unit usaha yang produktif, berintegritas", missionTitle: '<i class="fas fa-bullseye text-primary mr-3"></i> Misi Kami', missionText: "Memberikan kepuasan kepada Penambang Rakyat, Wirausaha mikro kecil, UMKM, petani, nelayan, serta masyarakat dengan pelayanan berkualitas unggul.", aboutButton: "Pelajari Lebih Lanjut", 
                     portfolioTitle: "Portofolio Unggulan", portfolio1Title: "Pekerjaan Jasa Pertambangan", portfolio1Desc: "Study Kelayakan Pertambangan Rakyat & Set Up IPAL.", portfolio2Title: "Alat-ALat Yang Tersedia", portfolio2Desc: "IPAL Puskesmas Telangsiong.", portfolio3Title: "Suplai Air Bersih", portfolio3Desc: "Menjamin ketersediaan air bersih untuk operasional industri dan masyarakat sekitar.", portfolioButton: "Lihat Semua Portofolio", 
-                    newsSectionTitle: "Berita & Informasi Terbaru", news1Title: "R17 Program Prioritas Prabowo - Gibran", news2Title: "Mengenal Delapan Misi 'Asta Cita' Pemerintahan Prabowo-Gibran", news3Title: "Menkop Budi Arie Apresiasi Pengesahan RUU Minerba, Koperasi Diizinkan Kelola Tambang", readMore: 'Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>', newsButton: "Lihat Semua Berita", 
+                    newsSectionTitle: "Berita & Informasi Terbaru", news1Title: "17 Program Prioritas Prabowo - Gibran", news2Title: "Mengenal Delapan Misi 'Asta Cita' Pemerintahan Prabowo-Gibran", news3Title: "Menkop Budi Arie Apresiasi Pengesahan RUU Minerba, Koperasi Diizinkan Kelola Tambang", readMore: 'Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>', newsButton: "Lihat Semua Berita", 
                     leadershipTitle: "Kepemimpinan Kami", leadershipDesc: "Tim kami terdiri dari para profesional berpengalaman yang berdedikasi untuk memajukan koperasi dan memberikan nilai terbaik bagi anggota.", treasurer: "Bendahara", secretary: "Sekretaris", leadershipButton: "Lihat Seluruh Tim Manajemen", 
                     partnersTitle: "Mitra Strategis & Perbankan", 
-                    footerDesc: "Koperasi produsen energi terbarukan, pertambangan, dan perdagangan yang inovatif dan ramah lingkungan.", footerLinksTitle: "Tautan Cepat", footerAbout: "Tentang Kami", footerPortfolio: "Portofolio", footerNews: "Berita", footerContact: "Hubungi Kami", footerContactTitle: "Hubungi Kami", footerAddress: "", footerSocialTitle: "Ikuti Kami", footerCopyright: "&copy; {year} Octa Mining Niaga. Hak Cipta Dilindungi.",
+                    footerDesc: "Koperasi produsen energi terbarukan, pertambangan, dan perdagangan yang inovatif dan ramah lingkungan.", footerLinksTitle: "Tautan Cepat", footerAbout: "Tentang Kami", footerPortfolio: "Portofolio", footerNews: "Berita", footerContact: "Hubungi Kami", footerContactTitle: "Hubungi Kami", footerAddress: "XXXXX", footerSocialTitle: "Ikuti Kami", footerCopyright: "&copy; {year} Octa Mining Niaga. Hak Cipta Dilindungi.",
                 },
                 en: {
                     navHome: "Home", navAbout: "About", navTopManagement: "Top Management", navAdvisor: "Advisor", navFounder: "Founder", navBoard: "Board", navSupervisor: "Supervisor", navMember: "Member", navContact: "Contact", navPortfolio: "Portfolio", navNews: "News", navGallery: "Gallery", 
                     heroTitle: "Energy, Mining & Trade", heroSubtitle: "Partner with us to be part of a modern cooperative that drives change towards a Golden Indonesia.", heroButton: "Explore More", 
+                    profileTitle: "Cooperative Profile",
+                    profileDesc1: "Octa Mining Niaga Cooperative is a driver of the people's economy through <strong>Integrated Corporation</strong>. The digitalization of Octa Mining Niaga Cooperative is undergoing a gradual digital transformation, present to help improve the welfare of the surrounding community and continues to innovate in developing a more modern cooperative.",
+                    profileDesc2: "Octa Mining Niaga is a Producer Cooperative for Renewable Energy, Mining, and Trade that is changing the paradigm in Indonesia by applying innovative and <strong>Eco-friendly</strong> principles. It aims to realize the ideals of Article 33 Paragraph (3) of the 1945 Constitution, which states that the earth, water, and natural resources contained therein are controlled by the state and utilized for the welfare of the people. It also implements the supply chain concept in the world of trade for the Micro, MSME, and Macro sub-sectors in order to support the government's strategic programs to improve the welfare of the general public and the nation's future generations.",
+                    tagline1: "# Golden Indonesia #",
+                    tagline2: '"Your Trade Solution"',
                     aboutTitle: "About Us", aboutSubtitle: "Octa Mining Niaga Cooperative", aboutDesc1: "Is a driver of the people's economy through <i>Integrated Corporation</i> and digital transformation. We are here to improve community welfare with modern innovations in cooperative development.", aboutDesc2: "We are a Producer Cooperative that applies <i>eco-friendly</i> and innovative principles, aiming to realize the mandate of Article 33 Paragraph (3) of the 1945 Constitution.", 
                     visionTitle: '<i class="fas fa-eye text-primary mr-3"></i> Our Vision', visionText: "To make the cooperative an Integrated Corporation, and to support productive business units with integrity", missionTitle: '<i class="fas fa-bullseye text-primary mr-3"></i> Our Mission', missionText: "Providing satisfaction to small-scale miners, micro-entrepreneurs, MSMEs, farmers, fishermen, and the community with superior quality services.", aboutButton: "Learn More", 
                     portfolioTitle: "Featured Portfolio", portfolio1Title: "Mining Services", portfolio1Desc: "Feasibility Study for Community Mining & IPAL Setup", portfolio2Title: "Tools needed", portfolio2Desc: "Telangsiong Community Health Center Wastewater Treatment Plant.", portfolio3Title: "Clean Water Supply", portfolio3Desc: "Ensuring the availability of clean water for industrial operations and the surrounding community.", portfolioButton: "View All Portfolio", 
