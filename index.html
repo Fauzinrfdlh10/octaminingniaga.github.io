@@ -31,14 +31,9 @@
                         trajan: ['Trajan Pro', 'Cinzel', 'serif'],
                     },
                     animation: {
-                        'fadeInUp': 'fadeInUp 1s ease-out forwards',
                         'slideDown': 'slideDown 0.5s ease-out forwards',
                     },
                     keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
                         slideDown: {
                             '0%': { transform: 'translateY(-100%)' },
                             '100%': { transform: 'translateY(0)' },
@@ -55,18 +50,33 @@
             src: url('fonts/TrajanPro-Regular.ttf') format('truetype');
             font-weight: normal; font-style: normal;
         }
-        /* Style untuk Animasi Scroll */
-        .fade-in-section { 
-            opacity: 0; 
-            transform: translateY(40px); 
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+
+        /* ===== SISTEM ANIMASI SCROLL BARU ===== */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
             will-change: opacity, transform;
         }
-        .fade-in-section.visible { 
-            opacity: 1; 
-            transform: translateY(0); 
-        }
+        
+        .animate-on-scroll.fade-in-up { transform: translateY(40px); }
+        .animate-on-scroll.fade-in-left { transform: translateX(-40px); }
+        .animate-on-scroll.fade-in-right { transform: translateX(40px); }
+        .animate-on-scroll.zoom-in { transform: scale(0.9); }
 
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: none; /* Reset transform ke posisi asli */
+        }
+        
+        /* Kelas untuk menunda animasi */
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+
+        /* Style Dasar (tidak berubah) */
         #navbar { transition: background-color 0.4s ease, box-shadow 0.4s ease; }
         .nav-link { position: relative; transition: color 0.3s ease; }
         .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: #D4AF37; transition: width 0.3s ease; }
@@ -85,7 +95,7 @@
     </style>
 </head>
 
-<body class="font-sans bg-white text-gray-800 flex flex-col min-h-screen">
+<body class="font-sans bg-white text-gray-800 flex flex-col min-h-screen overflow-x-hidden">
     <audio id="background-music" autoplay loop>
         <source src="images/WhatsApp Audio 2025-03-22 at 01.08.14.mpeg" type="audio/mp3">
         Your browser does not support the audio element.
@@ -168,23 +178,23 @@
         </nav>
 
         <div class="relative h-full flex flex-col items-center justify-center z-10 p-6 text-center">
-            <div class="max-w-4xl animate-fadeInUp">
-                <h1 class="text-4xl md:text-6xl font-trajan font-bold text-white mb-6 leading-tight tracking-wider uppercase" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);" data-translate-key="heroTitle">Energi, Pertambangan & Perdagangan</h1>
-                <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);" data-translate-key="heroSubtitle">Bermitra bersama kami untuk menjadi bagian dari koperasi modern yang mendorong perubahan menuju Indonesia Emas.</p>
-                <a href="#about" class="cta-button text-lg" data-translate-key="heroButton">Jelajahi Lebih Lanjut</a>
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-6xl font-trajan font-bold text-white mb-6 leading-tight tracking-wider uppercase animate-on-scroll fade-in-up is-visible" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);" data-translate-key="heroTitle">Energi, Pertambangan & Perdagangan</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto animate-on-scroll fade-in-up delay-200 is-visible" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);" data-translate-key="heroSubtitle">Bermitra bersama kami untuk menjadi bagian dari koperasi modern yang mendorong perubahan menuju Indonesia Emas.</p>
+                <a href="#about" class="cta-button text-lg animate-on-scroll fade-in-up delay-400 is-visible" data-translate-key="heroButton">Jelajahi Lebih Lanjut</a>
             </div>
             <div class="absolute bottom-10 animate-bounce"><a href="#about" aria-label="Scroll to next section"><i class="fas fa-chevron-down text-white text-3xl opacity-50 hover:opacity-100 transition-opacity"></i></a></div>
         </div>
     </header>
 
     <main>
-        <section id="profile" class="py-20 lg:py-28 bg-white fade-in-section">
+        <section id="profile" class="py-20 lg:py-28 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-on-scroll fade-in-up">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="profileTitle">Profil Koperasi</h2>
                     <div class="w-24 h-1 bg-primary mx-auto"></div>
                 </div>
-                <div class="max-w-4xl mx-auto text-center">
+                <div class="max-w-4xl mx-auto text-center animate-on-scroll fade-in-up delay-200">
                     <p class="text-gray-600 mb-6 leading-relaxed text-lg" data-translate-key="profileDesc1">
                         Koperasi Octa Mining Niaga penggerak perekonomian rakyat secara <strong>Integrated Corporation</strong>. Digitalisasi Koperasi Octa Mining Niaga mulai melakukan transformasi digital secara bertahap, hadir untuk membantu kesejahteraan masyarakat di sekitar dan terus berupaya berinovasi dalam pengembangan koperasi yang lebih modern.
                     </p>
@@ -197,14 +207,14 @@
             </div>
         </section>
 
-        <section id="about" class="py-20 lg:py-28 bg-gray-50 fade-in-section">
+        <section id="about" class="py-20 lg:py-28 bg-gray-50">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-on-scroll fade-in-up">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="aboutTitle">Sekilas Tentang Kami</h2>
                     <div class="w-24 h-1 bg-primary mx-auto"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
+                    <div class="animate-on-scroll fade-in-left">
                         <h3 class="text-2xl font-semibold text-secondary mb-4" data-translate-key="aboutSubtitle">Koperasi Octa Mining Niaga</h3>
                         <p class="text-gray-600 mb-6 leading-relaxed" data-translate-key="aboutDesc1">
                             Adalah penggerak perekonomian rakyat melalui <i>Integrated Corporation</i> dan transformasi digital. Kami hadir untuk meningkatkan kesejahteraan masyarakat dengan inovasi modern dalam pengembangan koperasi.
@@ -213,7 +223,7 @@
                             Kami adalah Koperasi Produsen yang menerapkan prinsip <i>eco-friendly</i> dan inovatif, bertujuan mewujudkan amanat Pasal 33 Ayat (3) UUD 1945.
                         </p>
                     </div>
-                    <div class="space-y-6">
+                    <div class="space-y-6 animate-on-scroll fade-in-right delay-200">
                         <div>
                             <h4 class="text-xl font-bold text-secondary mb-2 flex items-center" data-translate-key="visionTitle"><i class="fas fa-eye text-primary mr-3"></i> Visi Kami</h4>
                             <p class="text-gray-600" data-translate-key="visionText">Menjadikan koperasi Integrated Coorporation, serta mendukung unit-unit usaha yang produktif, berintegritas</p>
@@ -227,14 +237,14 @@
             </div>
         </section>
 
-        <section id="portofolio" class="py-20 lg:py-28 bg-white fade-in-section">
+        <section id="portofolio" class="py-20 lg:py-28 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-on-scroll fade-in-up">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="portfolioTitle">Portofolio Unggulan</h2>
                     <div class="w-24 h-1 bg-primary mx-auto"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <a href="portofolio.html" class="block group">
+                    <a href="portofolio.html" class="block group animate-on-scroll zoom-in">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300">
                             <img src="images/gambar/porto 11.jpeg" alt="Proyek 1" class="w-full h-56 object-cover">
                             <div class="p-6">
@@ -243,7 +253,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="portofolio.html" class="block group">
+                    <a href="portofolio.html" class="block group animate-on-scroll zoom-in delay-200">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300">
                             <img src="images/gambar/porto 2.jpeg" alt="Proyek 2" class="w-full h-56 object-cover">
                             <div class="p-6">
@@ -252,7 +262,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="portofolio.html" class="block group">
+                    <a href="portofolio.html" class="block group animate-on-scroll zoom-in delay-400">
                          <div class="bg-white rounded-lg shadow-lg overflow-hidden transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300">
                             <img src="images/gambar/porto 12.jpeg" alt="Proyek 3" class="w-full h-56 object-cover">
                             <div class="p-6">
@@ -262,20 +272,20 @@
                         </div>
                     </a>
                 </div>
-                <div class="text-center mt-16">
+                <div class="text-center mt-16 animate-on-scroll fade-in-up">
                     <a href="portofolio.html" class="cta-button" data-translate-key="portfolioButton">Lihat Semua Portofolio</a>
                 </div>
             </div>
         </section>
 
-        <section id="berita" class="py-20 lg:py-28 bg-gray-50 fade-in-section">
+        <section id="berita" class="py-20 lg:py-28 bg-gray-50">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-on-scroll fade-in-up">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="newsSectionTitle">Berita & Informasi Terbaru</h2>
                     <div class="w-24 h-1 bg-primary mx-auto"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col animate-on-scroll fade-in-up">
                         <img src="images/Prabowo-gibran.jpg" alt="Berita 1" class="w-full h-56 object-cover">
                         <div class="p-6 flex flex-col flex-grow">
                             <p class="text-sm text-gray-500 mb-2">20 October 2024</p>
@@ -283,7 +293,7 @@
                             <a href="berita.html" class="font-semibold text-primary hover:text-yellow-600 transition-colors" data-translate-key="readMore">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col animate-on-scroll fade-in-up delay-200">
                         <img src="images/asta cita.jpeg" alt="Berita 2" class="w-full h-56 object-cover">
                         <div class="p-6 flex flex-col flex-grow">
                             <p class="text-sm text-gray-500 mb-2">07 November 2024</p>
@@ -291,7 +301,7 @@
                             <a href="berita.html" class="font-semibold text-primary hover:text-yellow-600 transition-colors" data-translate-key="readMore">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col animate-on-scroll fade-in-up delay-400">
                         <img src="images/menkop budi.jpg" alt="Berita 3" class="w-full h-56 object-cover">
                         <div class="p-6 flex flex-col flex-grow">
                             <p class="text-sm text-gray-500 mb-2">18 Februari 2025</p>
@@ -300,22 +310,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-16">
+                <div class="text-center mt-16 animate-on-scroll fade-in-up">
                     <a href="berita.html" class="cta-button" data-translate-key="newsButton">Lihat Semua Berita</a>
                 </div>
             </div>
         </section>
 
-       <section class="py-20 lg:py-28 bg-white fade-in-section">
+       <section class="py-20 lg:py-28 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-on-scroll fade-in-up">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4 font-display" data-translate-key="leadershipTitle">Kepemimpinan Kami</h2>
                     <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-translate-key="leadershipDesc">Tim kami terdiri dari para profesional berpengalaman yang berdedikasi untuk memajukan koperasi dan memberikan nilai terbaik bagi anggota.</p>
                 </div>
                 
                 <div class="flex flex-wrap justify-center gap-10">
-                    
-                    <div class="bg-white rounded-lg shadow-xl p-6 text-center w-full max-w-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
+                    <div class="bg-white rounded-lg shadow-xl p-6 text-center w-full max-w-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center animate-on-scroll zoom-in delay-200">
                         <div class="w-full h-48 mb-6 overflow-hidden rounded-lg shadow-md">
                            <img src="images/t1.png" alt="Randi Mamola" class="w-full h-full object-cover">
                         </div>
@@ -323,35 +332,34 @@
                         <h6 class="text-primary font-semibold text-md" data-translate-key="treasurer">Bendahara</h6>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-xl p-6 text-center w-full max-w-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center">
+                    <div class="bg-white rounded-lg shadow-xl p-6 text-center w-full max-w-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center animate-on-scroll zoom-in delay-400">
                         <div class="w-full h-48 mb-6 overflow-hidden rounded-lg shadow-md">
                            <img src="images/t3.png" alt="Muhammad Khaliq Mantiri" class="w-full h-full object-cover">
                         </div>
                         <h5 class="font-trajan font-bold text-xl mb-1 text-secondary">Muhammad Khaliq Mantiri</h5>
                         <h6 class="text-primary font-semibold text-md" data-translate-key="secretary">Sekretaris</h6>
                     </div>
-
                 </div>
-                <div class="text-center mt-16">
+                <div class="text-center mt-16 animate-on-scroll fade-in-up">
                     <a href="service.html" class="cta-button" data-translate-key="leadershipButton">Lihat Seluruh Tim Manajemen</a>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 lg:py-28 bg-gray-50 fade-in-section">
+        <section class="py-20 lg:py-28 bg-gray-50">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-secondary font-display" data-translate-key="partnersTitle">Mitra Strategis & Perbankan</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-secondary font-display animate-on-scroll fade-in-up" data-translate-key="partnersTitle">Mitra Strategis & Perbankan</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12 items-center">
-                    <div class="partner-logo flex justify-center"><img src="images/esdm-removebg-preview (1).png" alt="Logo ESDM" class="max-h-16"></div>
-                    <div class="partner-logo flex justify-center"><img src="images/kemenko.png" alt="Logo Kemenko" class="max-h-16"></div>
-                    <div class="partner-logo flex justify-center"><img src="images/lingkungan-removebg-preview.png" alt="Logo Lingkungan" class="max-h-16"></div>
-                    <div class="partner-logo flex justify-center"><img src="images/itb.png" alt="Logo ITB" class="max-h-16"></div>
-                    <div class="partner-logo flex justify-center"><img src="images/al.png" alt="Logo AL" class="max-h-16"></div>
-                    <div class="partner-logo flex justify-center"><img src="images/LOGO_KOARMADA_RI_PNG.png" alt="Logo Koarmada" class="max-h-16"></div>
-                    <div class="partner-logo flex justify-center"><img src="images/siloam.png" alt="Logo Siloam" class="max-h-16"></div>
-                    <div class="partner-logo flex justify-center"><img src="images/iacpi-removebg-preview.png" alt="Logo IACPI" class="max-h-16"></div>
-                    <div class="partner-logo flex justify-center"><img src="images/bca.png" alt="Logo BCA" class="max-h-12"></div>
-                    <div class="partner-logo flex justify-center"><img src="images/bank-sulut.png" alt="Logo Bank Sulut" class="max-h-12"></div>
+                    <div class="partner-logo flex justify-center animate-on-scroll zoom-in"><img src="images/esdm-removebg-preview (1).png" alt="Logo ESDM" class="max-h-16"></div>
+                    <div class="partner-logo flex justify-center animate-on-scroll zoom-in delay-100"><img src="images/kemenko.png" alt="Logo Kemenko" class="max-h-16"></div>
+                    <div class="partner-logo flex justify-center animate-on-scroll zoom-in delay-200"><img src="images/lingkungan-removebg-preview.png" alt="Logo Lingkungan" class="max-h-16"></div>
+                    <div class="partner-logo flex justify-center animate-on-scroll zoom-in delay-300"><img src="images/itb.png" alt="Logo ITB" class="max-h-16"></div>
+                    <div class="partner-logo flex justify-center animate-on-scroll zoom-in delay-400"><img src="images/al.png" alt="Logo AL" class="max-h-16"></div>
+                    <div class="partner-logo flex justify-center animate-on-scroll zoom-in"><img src="images/LOGO_KOARMADA_RI_PNG.png" alt="Logo Koarmada" class="max-h-16"></div>
+                    <div class="partner-logo flex justify-center animate-on-scroll zoom-in delay-100"><img src="images/siloam.png" alt="Logo Siloam" class="max-h-16"></div>
+                    <div class="partner-logo flex justify-center animate-on-scroll zoom-in delay-200"><img src="images/iacpi-removebg-preview.png" alt="Logo IACPI" class="max-h-16"></div>
+                    <div class="partner-logo flex justify-center animate-on-scroll zoom-in delay-300"><img src="images/bca.png" alt="Logo BCA" class="max-h-12"></div>
+                    <div class="partner-logo flex justify-center animate-on-scroll zoom-in delay-400"><img src="images/bank-sulut.png" alt="Logo Bank Sulut" class="max-h-12"></div>
                 </div>
             </div>
         </section>
@@ -399,7 +407,24 @@
         document.addEventListener('DOMContentLoaded', function() {
             
             // =======================================================
-            // BAGIAN 1: SKRIP INTERAKTIVITAS HALAMAN UTAMA
+            // BAGIAN 1: SKRIP ANIMASI SAAT SCROLL
+            // =======================================================
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Hentikan observasi setelah animasi berjalan
+                    }
+                });
+            }, {
+                threshold: 0.1 // Animasi berjalan saat elemen 10% terlihat
+            });
+            animatedElements.forEach(el => observer.observe(el));
+
+
+            // =======================================================
+            // BAGIAN 2: SKRIP INTERAKTIVITAS HALAMAN UTAMA (TIDAK DIUBAH)
             // =======================================================
             document.getElementById('displayYear').textContent = new Date().getFullYear();
             const navbar = document.getElementById('navbar');
@@ -425,21 +450,12 @@
             const mobileTopBtn = document.getElementById('mobile-top-btn');
             const mobileTopMenu = document.getElementById('mobile-top-menu');
             const mobileTopArrow = document.getElementById('mobile-top-arrow');
-            mobileTopBtn.addEventListener('click', () => {
-                mobileTopMenu.classList.toggle('hidden');
-                mobileTopArrow.classList.toggle('rotate-180');
-            });
-
-            const fadeElements = document.querySelectorAll('.fade-in-section');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
+            if (mobileTopBtn) {
+                mobileTopBtn.addEventListener('click', () => {
+                    mobileTopMenu.classList.toggle('hidden');
+                    mobileTopArrow.classList.toggle('rotate-180');
                 });
-            }, { threshold: 0.1 });
-            fadeElements.forEach(el => observer.observe(el));
+            }
             
             const heroBgs = document.querySelectorAll('.hero-slider .hero-bg');
             if (heroBgs.length > 0) {
@@ -452,7 +468,7 @@
             }
 
             // =======================================================
-            // BAGIAN 2: SKRIP KONTROL DROPDOWN BAHASA DESKTOP
+            // BAGIAN 3: SKRIP KONTROL DROPDOWN BAHASA DESKTOP
             // =======================================================
             const langBtn = document.getElementById('lang-dropdown-btn');
             const langMenu = document.getElementById('lang-dropdown-menu');
@@ -471,7 +487,7 @@
             }
 
             // =======================================================
-            // BAGIAN 3: SKRIP FUNGSI TRANSLATE
+            // BAGIAN 4: SKRIP FUNGSI TRANSLATE
             // =======================================================
             const translations = {
                 id: {
@@ -514,7 +530,7 @@
                     if (translations[lang] && translations[lang][key]) {
                         let translatedText = translations[lang][key];
                         if (key === 'footerCopyright') {
-                           translatedText = translatedText.replace('{year}', new Date().getFullYear());
+                            translatedText = translatedText.replace('{year}', new Date().getFullYear());
                         }
                         element.innerHTML = translatedText;
                     }
@@ -545,7 +561,7 @@
             setLanguage(preferredLanguage);
 
             // =======================================================
-            // BAGIAN 4: SKRIP MUSIK
+            // BAGIAN 5: SKRIP MUSIK
             // =======================================================
             const audio = document.getElementById('background-music');
             if (audio) {
