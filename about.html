@@ -15,7 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
     <script>
-        // Konfigurasi Kustom Tailwind CSS (Sama seperti index.html)
+        // Konfigurasi Kustom Tailwind CSS
         tailwind.config = {
             theme: {
                 extend: {
@@ -35,43 +35,46 @@
     </script>
     
     <style>
-        /* Style Global (Sama seperti index.html) */
         @font-face {
             font-family: 'Trajan Pro';
             src: url('fonts/TrajanPro-Regular.ttf') format('truetype');
             font-weight: normal; font-style: normal;
         }
         body {
-            background-color: #f8f9fa; /* Latar belakang abu-abu muda untuk halaman konten */
+            background-color: #f8f9fa;
+            overflow-x: hidden; /* Mencegah scroll horizontal akibat animasi */
         }
-        .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in-section.visible { opacity: 1; transform: translateY(0); }
-        #navbar { transition: background-color 0.4s ease, box-shadow 0.4s ease; }
+        
+        /* ===== SISTEM ANIMASI SCROLL (SAMA SEPERTI index.html) ===== */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .animate-on-scroll.fade-in-up { transform: translateY(40px); }
+        .animate-on-scroll.fade-in-left { transform: translateX(-40px); }
+        .animate-on-scroll.fade-in-right { transform: translateX(40px); }
+        .animate-on-scroll.zoom-in { transform: scale(0.9); }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        
+        /* Style Global */
+        #navbar { transition: background-color 0.4s ease, box-shadow 0.4s ease; position: sticky; top: 0; background-color: rgba(17, 24, 39, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); }
         .nav-link { position: relative; transition: color 0.3s ease; }
         .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: #D4AF37; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
-        /* Navbar solid langsung karena bukan di hero section */
-        #navbar {
-            position: sticky;
-            top: 0;
-            background-color: rgba(17, 24, 39, 0.95);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
         .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: #D4AF37; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 999; }
         .back-to-top.visible { opacity: 1; visibility: visible; }
         .back-to-top:hover { background: #b8860b; transform: translateY(-5px); }
         .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: #D4AF37; z-index: 1001; }
-        .page-header {
-            padding: 12rem 0 6rem 0;
-            background-color: #111827;
-            background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1887&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-        .page-title {
-            font-family: 'Trajan Pro', 'Cinzel', serif;
-        }
+        .page-header { padding: 12rem 0 6rem 0; background-color: #111827; background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1887&auto=format&fit=crop'); background-size: cover; background-position: center; }
+        .page-title { font-family: 'Trajan Pro', 'Cinzel', serif; }
     </style>
 </head>
 
@@ -120,22 +123,22 @@
                  <a href="about.html" class="block text-white hover:text-primary py-2" data-translate-key="navAbout">About</a>
                  <button id="mobile-top-btn" class="w-full text-left text-white hover:text-primary flex items-center justify-between py-2" data-translate-key="navTopManagement">Top Management <i id="mobile-top-arrow" class="fas fa-chevron-down text-sm"></i></button>
                  <div id="mobile-top-menu" class="hidden flex-col pl-4 space-y-1 border-l-2 border-primary/50">
-                     <a href="service.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navAdvisor">Penasehat</a>
-                     <a href="advisor pengawas.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navFounder">Pendiri</a>
-                     <a href="legal koperasi.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navBoard">Pengurus</a>
-                     <a href="dewan pengawas.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navSupervisor">Pengawas</a>
-                     <a href="anggota.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navMember">Anggota</a>
+                      <a href="service.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navAdvisor">Penasehat</a>
+                      <a href="advisor pengawas.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navFounder">Pendiri</a>
+                      <a href="legal koperasi.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navBoard">Pengurus</a>
+                      <a href="dewan pengawas.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navSupervisor">Pengawas</a>
+                      <a href="anggota.html" class="block text-gray-300 hover:text-primary py-1" data-translate-key="navMember">Anggota</a>
                  </div>
                  <a href="team.html" class="block text-white hover:text-primary py-2" data-translate-key="navContact">Contact</a>
                  <a href="portofolio.html" class="block text-white hover:text-primary py-2" data-translate-key="navPortfolio">Portofolio</a>
                  <a href="berita.html" class="block text-white hover:text-primary py-2" data-translate-key="navNews">Berita</a>
                  <a href="galeri.html" class="block text-white hover:text-primary py-2" data-translate-key="navGallery">Galeri</a>
                  <div class="border-t border-gray-700 mt-4 pt-4">
-                     <div class="flex items-center justify-center gap-4">
-                         <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-6 h-auto"> ID</a>
-                         <div class="w-px h-6 bg-gray-700"></div>
-                         <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-6 h-auto"> EN</a>
-                     </div>
+                      <div class="flex items-center justify-center gap-4">
+                           <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-6 h-auto"> ID</a>
+                           <div class="w-px h-6 bg-gray-700"></div>
+                           <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-6 h-auto"> EN</a>
+                      </div>
                  </div>
              </div>
         </div>
@@ -144,23 +147,23 @@
     <main id="top">
         <header class="page-header">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-white page-title uppercase tracking-wider" data-translate-key="pageTitle">Tentang Kami</h1>
-                <p class="text-lg text-gray-300 mt-4 max-w-2xl mx-auto" data-translate-key="pageSubtitle">Mengenal lebih dalam visi, misi, dan landasan hukum Koperasi Octa Mining Niaga.</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-white page-title uppercase tracking-wider animate-on-scroll fade-in-up" data-translate-key="pageTitle">Tentang Kami</h1>
+                <p class="text-lg text-gray-300 mt-4 max-w-2xl mx-auto animate-on-scroll fade-in-up delay-200" data-translate-key="pageSubtitle">Mengenal lebih dalam visi, misi, dan landasan hukum Koperasi Octa Mining Niaga.</p>
             </div>
         </header>
 
-        <section class="py-20 lg:py-28 bg-white fade-in-section">
+        <section class="py-12 lg:py-16 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-on-scroll fade-in-up">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary font-display" data-translate-key="visionMissionTitle">VISI & MISI</h2>
                     <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-lg shadow-xl p-8 border-t-4 border-primary">
+                    <div class="bg-white rounded-lg shadow-xl p-8 border-t-4 border-primary animate-on-scroll fade-in-left">
                         <h3 class="text-2xl font-bold text-secondary mb-4 flex items-center" data-translate-key="visionTitle"><i class="fas fa-eye text-primary mr-3"></i> Visi</h3>
                         <p class="text-gray-600 leading-relaxed" data-translate-key="visionText">Menjadikan koperasi Integrated Coorporation, serta mendukung unit-unit usaha yang produktif, berintegritas dan berkelanjutan dengan sumber daya manusia profesional, berkualitas, dan mampu bersaing secara global.</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-xl p-8 border-t-4 border-yellow-500">
+                    <div class="bg-white rounded-lg shadow-xl p-8 border-t-4 border-yellow-500 animate-on-scroll fade-in-right delay-200">
                         <h3 class="text-2xl font-bold text-secondary mb-4 flex items-center" data-translate-key="missionTitle"><i class="fas fa-bullseye text-yellow-500 mr-3"></i> Misi</h3>
                         <ul class="list-disc list-inside text-gray-600 space-y-3 leading-relaxed">
                             <li data-translate-key="missionPoint1">Memberikan kepuasan kepada Penambang Rakyat, Wirausaha mikro kecil, UMKM, petani, nelayan, serta masyarakat dengan pelayanan berkualitas unggul.</li>
@@ -172,13 +175,13 @@
             </div>
         </section>
 
-        <section class="py-20 lg:py-28 bg-gray-50 fade-in-section">
+        <section class="py-12 lg:py-16 bg-gray-50">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 animate-on-scroll fade-in-up">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary font-display" data-translate-key="legalityTitle">LEGALITAS KOPERASI</h2>
                     <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
                 </div>
-                <div class="bg-white rounded-lg shadow-xl p-8 md:p-12">
+                <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 animate-on-scroll zoom-in">
                     <ul class="space-y-4 text-gray-700">
                         <li class="flex items-start"><i class="fas fa-file-alt text-primary mt-1 mr-4"></i><span data-translate-key="legalityAct"><strong>Akta Pendirian:</strong> Dibuat pada Kamis, 28 Agustus 2025, di hadapan Notaris berwenang berdasarkan SK Menteri Koperasi Dan UKM Nomor 263/KEP/ M.KUKM.2/VII/2012.</span></li>
                         <li class="flex items-start"><i class="fas fa-gavel text-primary mt-1 mr-4"></i><span data-translate-key="legalityDecree"><strong>SK Menteri Hukum:</strong> NOMOR AHU-XXXXX.AH.XX.XX. TAHUN 2025 tentang Pengesahan Pendirian Badan Hukum.</span></li>
@@ -190,14 +193,14 @@
             </div>
         </section>
 
-        <section class="py-20 lg:py-28 bg-white fade-in-section">
+        <section class="py-12 lg:py-16 bg-white">
             <div class="container mx-auto px-6">
-                 <div class="text-center mb-16">
+                 <div class="text-center mb-16 animate-on-scroll fade-in-up">
                     <h2 class="text-3xl lg:text-4xl font-bold text-secondary font-display" data-translate-key="ethicsTitle">ETIKA BISNIS</h2>
                     <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
+                    <div class="animate-on-scroll fade-in-left">
                         <h3 class="text-xl font-bold text-secondary mb-3" data-translate-key="ethicsSystemTitle">Sistem Menegakkan Etika</h3>
                         <ul class="list-disc list-inside text-gray-600 space-y-2">
                             <li data-translate-key="ethicsSystem1">Membuat kode etik yang jelas dan spesifik.</li>
@@ -207,7 +210,7 @@
                             <li data-translate-key="ethicsSystem5">Mengambil tindakan tegas terhadap pelanggaran.</li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="animate-on-scroll fade-in-right delay-200">
                         <h3 class="text-xl font-bold text-secondary mb-3" data-translate-key="ethicsBenefitsTitle">Manfaat Menegakkan Etika</h3>
                         <ul class="list-disc list-inside text-gray-600 space-y-2">
                             <li data-translate-key="ethicsBenefits1">Membangun kepercayaan dengan semua pemangku kepentingan.</li>
@@ -262,7 +265,28 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // --- Skrip Interaktivitas Dasar ---
+        
+        // =======================================================
+        // BAGIAN 1: SKRIP ANIMASI SAAT SCROLL (DENGAN REPLAY)
+        // =======================================================
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                } else {
+                    entry.target.classList.remove('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        animatedElements.forEach(el => observer.observe(el));
+
+
+        // =======================================================
+        // BAGIAN 2: SKRIP INTERAKTIVITAS DASAR
+        // =======================================================
         document.getElementById('displayYear').textContent = new Date().getFullYear();
         const backToTopButton = document.querySelector('.back-to-top');
         const progressBar = document.querySelector('.progress-bar');
@@ -276,7 +300,6 @@
             progressBar.style.width = scrollPercent + '%';
         });
 
-        // --- Menu Mobile ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         if(mobileMenuBtn) {
@@ -294,18 +317,6 @@
             });
         }
         
-        // --- Animasi Fade-in ---
-        const fadeElements = document.querySelectorAll('.fade-in-section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        fadeElements.forEach(el => observer.observe(el));
-
         // --- Dropdown Bahasa ---
         const langBtn = document.getElementById('lang-dropdown-btn');
         const langMenu = document.getElementById('lang-dropdown-menu');
@@ -433,26 +444,6 @@
 
         const savedLang = localStorage.getItem("language") || "id";
         setLanguage(savedLang);
-
-        const audio = document.getElementById('background-music');
-        if (audio) {
-            audio.addEventListener('loadedmetadata', function() {
-                const musicParts = [{ start: 33, end: 264 }, { start: 264, end: audio.duration }];
-                let currentPart = parseInt(localStorage.getItem('currentPart')) || 0;
-                if(currentPart >= musicParts.length) currentPart = 0;
-                let currentTime = parseFloat(localStorage.getItem('currentTime')) || musicParts[currentPart].start;
-                audio.currentTime = currentTime;
-                audio.play().catch(e => console.log("Autoplay was prevented by the browser."));
-                audio.addEventListener('timeupdate', () => {
-                    localStorage.setItem('currentTime', audio.currentTime);
-                    localStorage.setItem('currentPart', currentPart);
-                    if (audio.duration && audio.currentTime >= musicParts[currentPart].end) {
-                        currentPart = (currentPart + 1) % musicParts.length;
-                        audio.currentTime = musicParts[currentPart].start;
-                    }
-                });
-            });
-        }
     });
     </script>
 </body>
