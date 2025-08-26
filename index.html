@@ -92,6 +92,33 @@
         .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: #D4AF37; z-index: 1001; transition: width 0.2s ease; }
         .cta-button { display: inline-block; background-color: #D4AF37; color: white; font-weight: bold; padding: 12px 30px; border-radius: 9999px; transition: all 0.3s ease; transform-origin: center; }
         .cta-button:hover { background-color: #b8860b; transform: scale(1.05); }
+
+        /* Penyesuaian untuk Hero Background */
+        .hero-bg-desktop {
+            display: none;
+        }
+        .hero-bg-mobile {
+            display: block;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .hero-bg-desktop {
+                display: block;
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+                height: 100%;
+            }
+            .hero-bg-mobile {
+                display: none;
+            }
+        }
+
+       
     </style>
 </head>
 
@@ -106,97 +133,105 @@
 
     <header id="top" class="relative h-screen overflow-hidden">
         <div class="hero-slider absolute inset-0">
-            <div class="hero-bg active" style="background-image: url('images/bg4.jpg');"></div>
-            <div class="hero-bg" style="background-image: url('images/bg-new/bg-new2.jpeg');"></div>
-            <div class="hero-bg" style="background-image: url('images/bg-new/bg-new3.jpeg');"></div>
+            <div class="hero-bg active">
+                <div class="hero-bg-desktop" style="background-image: url('images/bg-new/bg\ welcome.png');"></div>
+                <div class="hero-bg-mobile" style="background-image: url('images/bg-new/bg\ welcome.png');"></div>
+            </div>
+            <div class="hero-bg">
+                <div class="hero-bg-desktop" style="background-image: url('images/bg-new/bg-new3.jpeg');"></div>
+                <div class="hero-bg-mobile" style="background-image: url('images/bg-new/bg-new3.jpeg');"></div>
+            </div>
+            <div class="hero-bg">
+                <div class="hero-bg-desktop" style="background-image: url('images/bg-new/bg-new1.jpeg');"></div>
+                <div class="hero-bg-mobile" style="background-image: url('images/bg-new/bg-new1.jpeg');"></div>
+            </div>
         </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg/80 via-dark-bg/50 to-transparent"></div>
 
         <nav id="navbar" class="fixed top-0 left-0 w-full z-50">
              <div class="container mx-auto px-6 py-4">
-                <div class="flex justify-between items-center">
-                    <a href="index.html" class="flex-shrink-0">
-                        <img src="images/logo octa removebg.png" alt="Logo Koperasi" class="h-12 w-auto">
-                    </a>
-                    <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
-                    
-                    <div class="hidden lg:flex items-center space-x-8">
-                        <a href="index.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navHome">Home</a>
-                        <a href="about.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navAbout">About</a>
-                        <div class="relative group">
-                        <button class="text-white hover:text-primary flex items-center nav-link font-medium" data-translate-key="navTopManagement">Top Management <i class="fas fa-chevron-down text-xs ml-2 mt-1 transition-transform group-hover:rotate-180"></i></button>
-                        <div class="absolute hidden group-hover:block w-48 bg-dark-bg/90 mt-2 rounded-md shadow-lg overflow-hidden z-50">
-                            <a href="service.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navAdvisor">Penasehat</a>
-                            <a href="advisor pengawas.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navFounder">Pendiri</a>
-                            <a href="legal koperasi.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navBoard">Pengurus</a>
-                            <a href="dewan pengawas.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navSupervisor">Pengawas</a>
-                            <a href="anggota.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navMember">Anggota</a>
-                        </div>
-                    </div>
-                        <a href="team.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navContact">Contact</a>
-                        <a href="portofolio.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navPortfolio">Portofolio</a>
-                        <a href="berita.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navNews">Berita</a>
-                        <a href="galeri.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navGallery">Galeri</a>
-                        
-                        <div class="relative">
-                            <button id="lang-dropdown-btn" class="text-white flex items-center gap-2 nav-link font-medium"></button>
-                            <div id="lang-dropdown-menu" class="absolute hidden w-40 bg-dark-bg/90 mt-2 rounded-md shadow-lg overflow-hidden right-0 z-50">
-                                <a href="#" class="lang-switcher block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors flex items-center" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-5 h-auto mr-2"> Indonesia</a>
-                                <a href="#" class="lang-switcher block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors flex items-center" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-5 h-auto mr-2"> English</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                 <div class="flex justify-between items-center">
+                     <a href="index.html" class="flex-shrink-0">
+                         <img src="images/logo octa removebg.png" alt="Logo Koperasi" class="h-12 w-auto">
+                     </a>
+                     <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+                     
+                     <div class="hidden lg:flex items-center space-x-8">
+                         <a href="index.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navHome">Home</a>
+                         <a href="about.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navAbout">About</a>
+                         <div class="relative group">
+                         <button class="text-white hover:text-primary flex items-center nav-link font-medium" data-translate-key="navTopManagement">Top Management <i class="fas fa-chevron-down text-xs ml-2 mt-1 transition-transform group-hover:rotate-180"></i></button>
+                         <div class="absolute hidden group-hover:block w-48 bg-dark-bg/90 mt-2 rounded-md shadow-lg overflow-hidden z-50">
+                             <a href="service.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navAdvisor">Penasehat</a>
+                             <a href="advisor pengawas.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navFounder">Pendiri</a>
+                             <a href="legal koperasi.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navBoard">Pengurus</a>
+                             <a href="dewan pengawas.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navSupervisor">Pengawas</a>
+                             <a href="anggota.html" class="block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors" data-translate-key="navMember">Anggota</a>
+                         </div>
+                     </div>
+                         <a href="team.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navContact">Contact</a>
+                         <a href="portofolio.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navPortfolio">Portofolio</a>
+                         <a href="berita.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navNews">Berita</a>
+                         <a href="galeri.html" class="text-white hover:text-primary nav-link font-medium" data-translate-key="navGallery">Galeri</a>
+                         
+                         <div class="relative">
+                             <button id="lang-dropdown-btn" class="text-white flex items-center gap-2 nav-link font-medium"></button>
+                             <div id="lang-dropdown-menu" class="absolute hidden w-40 bg-dark-bg/90 mt-2 rounded-md shadow-lg overflow-hidden right-0 z-50">
+                                 <a href="#" class="lang-switcher block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors flex items-center" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-5 h-auto mr-2"> Indonesia</a>
+                                 <a href="#" class="lang-switcher block px-4 py-3 text-sm text-gray-300 hover:bg-primary hover:text-white transition-colors flex items-center" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-5 h-auto mr-2"> English</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
 
              <div id="mobile-menu" class="lg:hidden hidden bg-dark-bg/95">
-                <div class="px-6 pt-2 pb-6 space-y-2">
-                    <a href="index.html" class="block text-white hover:text-primary py-2" data-translate-key="navHome">Home</a>
-                    <a href="about.html" class="block text-white hover:text-primary py-2" data-translate-key="navAbout">About</a>
-                    <button id="mobile-top-btn" class="w-full text-left text-white hover:text-primary flex items-center justify-between py-2" data-translate-key="navTopManagement">Top Management <i id="mobile-top-arrow" class="fas fa-chevron-down text-sm"></i></button>
-                            <div id="mobile-top-menu" class="hidden flex-col pl-4 space-y-1 border-l-2 border-primary/50">
-                            <a href="service.html" class="flex justify-between items-center text-gray-300 hover:text-primary py-1" data-translate-key="navAdvisor">
-                                <span>Penasehat</span>
-                            </a>
-                            <a href="advisor pengawas.html" class="flex justify-between items-center text-gray-300 hover:text-primary py-1" data-translate-key="navFounder">
-                                <span>Pendiri</span>
-                            </a>
-                            <a href="legal koperasi.html" class="flex justify-between items-center text-gray-300 hover:text-primary py-1" data-translate-key="navBoard">
-                                <span>Pengurus</span>
-                                <i class="fas fa-chevron-right text-xs"></i>
-                            </a>
-                            <a href="dewan pengawas.html" class="flex justify-between items-center text-gray-300 hover:text-primary py-1" data-translate-key="navSupervisor">
-                                <span>Pengawas</span>
-                                <i class="fas fa-chevron-right text-xs"></i>
-                            </a>
-                            <a href="anggota.html" class="flex justify-between items-center text-gray-300 hover:text-primary py-1" data-translate-key="navMember">
-                                <span>Anggota</span>
-                            </a>
-                        </div>
-                    <a href="team.html" class="block text-white hover:text-primary py-2" data-translate-key="navContact">Contact</a>
-                    <a href="portofolio.html" class="block text-white hover:text-primary py-2" data-translate-key="navPortfolio">Portofolio</a>
-                    <a href="berita.html" class="block text-white hover:text-primary py-2" data-translate-key="navNews">Berita</a>
-                    <a href="galeri.html" class="block text-white hover:text-primary py-2" data-translate-key="navGallery">Galeri</a>
+                 <div class="px-6 pt-2 pb-6 space-y-2">
+                     <a href="index.html" class="block text-white hover:text-primary py-2" data-translate-key="navHome">Home</a>
+                     <a href="about.html" class="block text-white hover:text-primary py-2" data-translate-key="navAbout">About</a>
+                     <button id="mobile-top-btn" class="w-full text-left text-white hover:text-primary flex items-center justify-between py-2" data-translate-key="navTopManagement">Top Management <i id="mobile-top-arrow" class="fas fa-chevron-down text-sm"></i></button>
+                         <div id="mobile-top-menu" class="hidden flex-col pl-4 space-y-1 border-l-2 border-primary/50">
+                             <a href="service.html" class="flex justify-between items-center text-gray-300 hover:text-primary py-1" data-translate-key="navAdvisor">
+                                 <span>Penasehat</span>
+                             </a>
+                             <a href="advisor pengawas.html" class="flex justify-between items-center text-gray-300 hover:text-primary py-1" data-translate-key="navFounder">
+                                 <span>Pendiri</span>
+                             </a>
+                             <a href="legal koperasi.html" class="flex justify-between items-center text-gray-300 hover:text-primary py-1" data-translate-key="navBoard">
+                                 <span>Pengurus</span>
+                                 <i class="fas fa-chevron-right text-xs"></i>
+                             </a>
+                             <a href="dewan pengawas.html" class="flex justify-between items-center text-gray-300 hover:text-primary py-1" data-translate-key="navSupervisor">
+                                 <span>Pengawas</span>
+                                 <i class="fas fa-chevron-right text-xs"></i>
+                             </a>
+                             <a href="anggota.html" class="flex justify-between items-center text-gray-300 hover:text-primary py-1" data-translate-key="navMember">
+                                 <span>Anggota</span>
+                             </a>
+                         </div>
+                     <a href="team.html" class="block text-white hover:text-primary py-2" data-translate-key="navContact">Contact</a>
+                     <a href="portofolio.html" class="block text-white hover:text-primary py-2" data-translate-key="navPortfolio">Portofolio</a>
+                     <a href="berita.html" class="block text-white hover:text-primary py-2" data-translate-key="navNews">Berita</a>
+                     <a href="galeri.html" class="block text-white hover:text-primary py-2" data-translate-key="navGallery">Galeri</a>
 
-                    <div class="border-t border-gray-700 mt-4 pt-4">
-                        <div class="flex items-center justify-center gap-4">
-                            <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-6 h-auto"> ID</a>
-                            <div class="w-px h-6 bg-gray-700"></div>
-                            <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-6 h-auto"> EN</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                     <div class="border-t border-gray-700 mt-4 pt-4">
+                         <div class="flex items-center justify-center gap-4">
+                             <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="id"><img src="https://flagcdn.com/id.svg" alt="Indonesia" class="w-6 h-auto"> ID</a>
+                             <div class="w-px h-6 bg-gray-700"></div>
+                             <a href="#" class="lang-switcher text-white hover:text-primary transition-colors flex items-center gap-2" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="English" class="w-6 h-auto"> EN</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
         </nav>
+        
+        
 
-        <div class="relative h-full flex flex-col items-center justify-center z-10 p-6 text-center">
-            <div class="max-w-4xl">
-                <h1 class="text-4xl md:text-6xl font-trajan font-bold text-white mb-6 leading-tight tracking-wider uppercase animate-on-scroll fade-in-up is-visible" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);" data-translate-key="heroTitle">Energi, Pertambangan & Perdagangan</h1>
-                <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto animate-on-scroll fade-in-up delay-200 is-visible" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);" data-translate-key="heroSubtitle">Bermitra bersama kami untuk menjadi bagian dari koperasi modern yang mendorong perubahan menuju Indonesia Emas.</p>
-                <a href="#profile" class="cta-button text-lg animate-on-scroll fade-in-up delay-400 is-visible" data-translate-key="heroButton">Jelajahi Lebih Lanjut</a>
-            </div>
-            <div class="absolute bottom-10 animate-bounce"><a href="#profile" aria-label="Scroll to next section"><i class="fas fa-chevron-down text-white text-3xl opacity-50 hover:opacity-100 transition-opacity"></i></a></div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+            <a href="#profile" aria-label="Scroll to next section" class="animate-bounce">
+                <i class="fas fa-chevron-down text-white text-3xl opacity-50 hover:opacity-100 transition-opacity"></i>
+            </a>
         </div>
+
     </header>
 
     <main>
@@ -248,8 +283,8 @@
                     </div>
                 </div>
                  <div class="text-center mt-16 animate-on-scroll fade-in-up">
-                    <a href="about.html" class="cta-button" data-translate-key="newsButton">Lihat Semua</a>
-                </div>
+                     <a href="about.html" class="cta-button" data-translate-key="newsButton">Lihat Semua</a>
+                 </div>
             </div>
         </section>
 
@@ -586,7 +621,7 @@
             const audio = document.getElementById('background-music');
             if (audio) {
                 audio.addEventListener('loadedmetadata', function() {
-                    const musicParts = [
+                    const musicParts = [ 
                         { start: 33, end: 264 },
                         { start: 264, end: audio.duration }
                     ];
