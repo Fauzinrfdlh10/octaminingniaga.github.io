@@ -57,10 +57,10 @@
         #top {
             position: relative;
             width: 100%;
-            /* TINGGI HEADER MOBILE DISESUAIKAN menjadi 85vh */
-            height: 85vh; 
+            /* PERUBAHAN: Tinggi header mobile dikurangi agar tidak terlalu zoom */
+            height: 70vh; 
             overflow: hidden;
-            background-color: #111827; 
+            background-color: #111827;
         }
 
         /* 2. Pengaturan Slider dan Transisi */
@@ -68,11 +68,13 @@
             position: absolute; 
             inset: 0; 
             opacity: 0; 
-            /* ANIMASI ZOOM (TRANSFORM) DIHILANGKAN, hanya menyisakan transisi opacity */
-            transition: opacity 1.5s ease-in-out; 
+            /* PERUBAHAN: Animasi zoom diperhalus (skala lebih kecil) */
+            transform: scale(1.05); 
+            transition: opacity 1.5s ease-in-out, transform 10s linear; 
         }
         .hero-slider .hero-bg.active { 
             opacity: 1; 
+            transform: scale(1); 
         }
         
         /* 3. Pengaturan untuk semua gambar background */
