@@ -75,15 +75,21 @@
         }
         
         /* 4. Pengaturan transisi gambar */
-        .hero-slider .hero-bg { 
-            position: absolute; 
-            inset: 0; 
-            opacity: 0; 
-            transition: opacity 1.5s ease-in-out; /* Animasi zoom (transform) dihilangkan */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+.hero-slider .hero-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    background-size: cover;
+    /* Ubah baris ini */
+    background-position: center; /* Ini default untuk semua gambar */
+    background-repeat: no-repeat;
+}
+
+/* Tambahkan aturan spesifik untuk gambar ketiga */
+.hero-slider .hero-bg:nth-child(3) { /* Memilih elemen hero-bg ketiga */
+    background-position: top; /* Fokuskan ke bagian atas gambar */
+}
         .hero-slider .hero-bg.active { 
             opacity: 1; 
         }
