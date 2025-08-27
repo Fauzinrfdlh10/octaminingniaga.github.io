@@ -51,71 +51,55 @@
             font-weight: normal; font-style: normal;
         }
 
-        /* ===== CSS BACKGROUND HEADER YANG DIPERBAIKI ===== */
+        /* ===== CSS BACKGROUND HEADER BARU & FINAL ===== */
         
+        /* 1. Pengaturan Header Utama (#top) */
         #top {
             position: relative;
             width: 100%;
-            /* Tinggi header mobile disesuaikan lagi */
-            height: 65vh; /* Sedikit lebih kecil agar fokus lebih baik */
-            overflow: hidden;
-            background-color: #111827;
+            background-color: #111827; /* Fallback color */
+        }
+        
+        /* 2. Pseudo-element untuk menciptakan rasio aspek yang benar (Kunci Utama) */
+        #top::before {
+            content: '';
+            display: block;
+            /* Rasio aspek untuk mobile (misal 4:3), bisa disesuaikan */
+            padding-top: 75%; /* (height/width * 100) -> Rasio 4:3 */
         }
 
+        /* 3. Slider mengisi ruang yang diciptakan pseudo-element */
+        .hero-slider {
+            position: absolute;
+            inset: 0;
+        }
+        
+        /* 4. Pengaturan transisi gambar */
         .hero-slider .hero-bg { 
             position: absolute; 
             inset: 0; 
             opacity: 0; 
-            transform: scale(1.05); 
-            transition: opacity 1.5s ease-in-out, transform 10s linear; 
+            transition: opacity 1.5s ease-in-out; /* Animasi zoom (transform) dihilangkan */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .hero-slider .hero-bg.active { 
             opacity: 1; 
-            transform: scale(1); 
         }
         
-        .hero-bg-image {
-            width: 100%;
-            height: 100%;
-            background-size: cover; 
-            background-position: center; /* Default center */
-            background-repeat: no-repeat;
-        }
-        
-        /* Gambar pertama dengan penyesuaian posisi khusus untuk mobile */
-        .hero-bg.active:nth-child(1) .hero-bg-mobile {
-            /* Pergeseran ke kanan dan sedikit ke atas untuk menyorot tangan dan tulisan */
-            background-position: 60% 40%; 
-        }
-
-        .hero-bg-desktop { display: none; }
-        .hero-bg-mobile { display: block; }
-
+        /* 5. Aturan untuk Layar Besar (Desktop) */
         @media (min-width: 768px) {
-            #top {
-                height: auto; 
-                aspect-ratio: 1536 / 1024; 
-            }
-            .hero-bg-desktop { display: block; }
-            .hero-bg-mobile { display: none; }
-            /* Mengembalikan background-position ke center untuk desktop */
-            .hero-bg.active:nth-child(1) .hero-bg-desktop {
-                background-position: center;
+            #top::before {
+                /* Di desktop, gunakan rasio aspek gambar 1536x1024 */
+                padding-top: 66.6667%; /* (1024 / 1536) * 100 */
             }
         }
 
-        /* ===== SISTEM ANIMASI SCROLL & STYLE DASAR LAINNYA ===== */
+        /* ===== STYLE DASAR LAINNYA ===== */
         .animate-on-scroll { opacity: 0; transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform; }
         .animate-on-scroll.fade-in-up { transform: translateY(40px); }
-        .animate-on-scroll.fade-in-left { transform: translateX(-40px); }
-        .animate-on-scroll.fade-in-right { transform: translateX(40px); }
-        .animate-on-scroll.zoom-in { transform: scale(0.9); }
         .animate-on-scroll.is-visible { opacity: 1; transform: none; }
-        .delay-100 { transition-delay: 0.1s; }
-        .delay-200 { transition-delay: 0.2s; }
-        .delay-300 { transition-delay: 0.3s; }
-        .delay-400 { transition-delay: 0.4s; }
-        .delay-500 { transition-delay: 0.5s; }
         #navbar { transition: background-color 0.4s ease, box-shadow 0.4s ease; }
         .nav-link { position: relative; transition: color 0.3s ease; }
         .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: #D4AF37; transition: width 0.3s ease; }
@@ -125,9 +109,8 @@
         .partner-logo:hover img { opacity: 1; transform: scale(1.1); }
         .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: #D4AF37; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 999; }
         .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: #b8860b; transform: translateY(-5px); }
-        .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: #D4AF37; z-index: 1001; transition: width 0.2s ease; }
-        .cta-button { display: inline-block; background-color: #D4AF37; color: white; font-weight: bold; padding: 12px 30px; border-radius: 9999px; transition: all 0.3s ease; transform-origin: center; }
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: #D4AF37; z-index: 1001; }
+        .cta-button { display: inline-block; background-color: #D4AF37; color: white; font-weight: bold; padding: 12px 30px; border-radius: 9999px; transition: all 0.3s ease; }
         .cta-button:hover { background-color: #b8860b; transform: scale(1.05); }
     </style>
 </head>
@@ -142,24 +125,15 @@
     <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
     <header id="top">
-        <div class="hero-slider absolute inset-0">
-            <div class="hero-bg active">
-                <div class="hero-bg-desktop hero-bg-image" style="background-image: url('images/bg-new/bg welcome.png');"></div>
-                <div class="hero-bg-mobile hero-bg-image" style="background-image: url('images/bg-new/bg welcome.png');"></div>
-            </div>
-            <div class="hero-bg">
-                <div class="hero-bg-desktop hero-bg-image" style="background-image: url('images/bg-new/bg-new3.jpeg');"></div>
-                <div class="hero-bg-mobile hero-bg-image" style="background-image: url('images/bg-new/bg-new3.jpeg');"></div>
-            </div>
-            <div class="hero-bg">
-                <div class="hero-bg-desktop hero-bg-image" style="background-image: url('images/bg-new/bg-new1.jpeg');"></div>
-                <div class="hero-bg-mobile hero-bg-image" style="background-image: url('images/bg-new/bg-new1.jpeg');"></div>
-            </div>
+        <div class="hero-slider">
+            <div class="hero-bg active" style="background-image: url('images/bg-new/bg welcome.png');"></div>
+            <div class="hero-bg" style="background-image: url('images/bg-new/bg-new3.jpeg');"></div>
+            <div class="hero-bg" style="background-image: url('images/bg-new/bg-new1.jpeg');"></div>
         </div>
         
-        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg/80 via-dark-bg/50 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg/80 via-dark-bg/50 to-transparent z-10"></div>
         
-        <div class="relative w-full h-full flex flex-col">
+        <div class="absolute inset-0 flex flex-col z-20">
             <nav id="navbar" class="fixed top-0 left-0 w-full z-50">
                  <div class="container mx-auto px-6 py-4">
                      <div class="flex justify-between items-center">
