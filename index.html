@@ -53,22 +53,19 @@
 
         /* ===== CSS BACKGROUND HEADER YANG DIPERBAIKI ===== */
         
-        /* 1. Pengaturan Kotak Header Utama (#top) */
         #top {
             position: relative;
             width: 100%;
-            /* PERUBAHAN: Tinggi header mobile dikurangi agar tidak terlalu zoom */
-            height: 70vh; 
+            /* Tinggi header mobile disesuaikan lagi */
+            height: 65vh; /* Sedikit lebih kecil agar fokus lebih baik */
             overflow: hidden;
             background-color: #111827;
         }
 
-        /* 2. Pengaturan Slider dan Transisi */
         .hero-slider .hero-bg { 
             position: absolute; 
             inset: 0; 
             opacity: 0; 
-            /* PERUBAHAN: Animasi zoom diperhalus (skala lebih kecil) */
             transform: scale(1.05); 
             transition: opacity 1.5s ease-in-out, transform 10s linear; 
         }
@@ -77,20 +74,23 @@
             transform: scale(1); 
         }
         
-        /* 3. Pengaturan untuk semua gambar background */
         .hero-bg-image {
             width: 100%;
             height: 100%;
             background-size: cover; 
-            background-position: center;
+            background-position: center; /* Default center */
             background-repeat: no-repeat;
         }
         
-        /* 4. Aturan Tampilan Awal (Mobile-First) */
+        /* Gambar pertama dengan penyesuaian posisi khusus untuk mobile */
+        .hero-bg.active:nth-child(1) .hero-bg-mobile {
+            /* Pergeseran ke kanan dan sedikit ke atas untuk menyorot tangan dan tulisan */
+            background-position: 60% 40%; 
+        }
+
         .hero-bg-desktop { display: none; }
         .hero-bg-mobile { display: block; }
 
-        /* 5. Aturan untuk Layar Besar (Desktop) */
         @media (min-width: 768px) {
             #top {
                 height: auto; 
@@ -98,6 +98,10 @@
             }
             .hero-bg-desktop { display: block; }
             .hero-bg-mobile { display: none; }
+            /* Mengembalikan background-position ke center untuk desktop */
+            .hero-bg.active:nth-child(1) .hero-bg-desktop {
+                background-position: center;
+            }
         }
 
         /* ===== SISTEM ANIMASI SCROLL & STYLE DASAR LAINNYA ===== */
@@ -220,7 +224,7 @@
                  </div>
             </nav>
             
-           
+            
         </div>
     </header>
 
