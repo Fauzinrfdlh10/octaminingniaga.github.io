@@ -73,11 +73,16 @@
         .back-to-top.visible { opacity: 1; visibility: visible; }
         .back-to-top:hover { background: #b8860b; transform: translateY(-5px); }
         .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: #D4AF37; z-index: 1001; }
-        .page-header { padding: 12rem 0 6rem 0; background-color: #111827; background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1887&auto=format&fit=crop'); background-size: cover; background-position: center; }
+        .page-header { padding: 12rem 0 6rem 0; background-color: #111827; background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('images/bg-new/bg\ all.jpeg'); background-size: cover; background-position: center; }
         .page-title { font-family: 'Trajan Pro', 'Cinzel', serif; }
     </style>
 </head>
 
+<body class="font-sans text-gray-800">
+    <audio id="background-music" autoplay loop>
+        <source src="images/WhatsApp Audio 2025-03-22 at 01.08.14.mpeg" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 <body class="font-sans text-gray-800">
 
     <div class="progress-bar"></div>
@@ -442,6 +447,25 @@ Dusun Kenari II, Desa Buntulia Utara. Kabupaten Pohuwato, Provinsi Gorontalo.</s
 
         const savedLang = localStorage.getItem("language") || "id";
         setLanguage(savedLang);
+        const audio = document.getElementById('background-music');
+        if (audio) {
+            audio.addEventListener('loadedmetadata', function() {
+                const musicParts = [{ start: 33, end: 264 }, { start: 264, end: audio.duration }];
+                let currentPart = parseInt(localStorage.getItem('currentPart')) || 0;
+                if(currentPart >= musicParts.length) currentPart = 0;
+                let currentTime = parseFloat(localStorage.getItem('currentTime')) || musicParts[currentPart].start;
+                audio.currentTime = currentTime;
+                audio.play().catch(e => console.log("Autoplay was prevented by the browser."));
+                audio.addEventListener('timeupdate', () => {
+                    localStorage.setItem('currentTime', audio.currentTime);
+                    localStorage.setItem('currentPart', currentPart);
+                    if (audio.duration && audio.currentTime >= musicParts[currentPart].end) {
+                        currentPart = (currentPart + 1) % musicParts.length;
+                        audio.currentTime = musicParts[currentPart].start;
+                    }
+                });
+            });
+        }
     });
     </script>
 </body>
