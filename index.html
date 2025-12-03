@@ -357,7 +357,7 @@
                     <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-translate-key="leadershipDesc">Tim kami terdiri dari para profesional berpengalaman yang berdedikasi untuk memajukan koperasi dan memberikan nilai terbaik bagi anggota.</p>
                 </div>
                 
-                <!-- TEAM SECTION -->
+ <!-- TEAM SECTION -->
 <div class="flex flex-wrap justify-center gap-10">
 
     <!-- CARD 1 -->
@@ -367,7 +367,7 @@
         
         <div class="w-full h-48 mb-6 overflow-hidden rounded-lg shadow-md">
             <img src="images/t3.png" alt="Muhammad Khaliq Mantiri" 
-                 class="w-full h-full object-cover">
+                 class="w-full h-full object-cover click-zoom cursor-pointer">
         </div>
 
         <h5 class="font-trajan font-bold text-xl mb-1 text-secondary">
@@ -378,18 +378,7 @@
         </h6>
     </div>
 
-</div>
-
-<div class="text-center mt-16 animate-on-scroll fade-in-up">
-    <a href="service.html" class="cta-button" data-translate-key="leadershipButton">
-        Lihat Seluruh Tim Manajemen
-    </a>
-</div>
-
-
-<!-- CARD 2 -->
-<div class="flex flex-wrap justify-center gap-10 mt-10">
-
+    <!-- CARD 2 -->
     <div class="bg-white rounded-lg shadow-xl p-6 text-center w-full max-w-xs 
                 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 
                 flex flex-col items-center animate-on-scroll zoom-in delay-200">
@@ -397,7 +386,26 @@
         <div class="w-full h-48 mb-6 overflow-hidden rounded-lg shadow-md">
             <img src="images/Porto/WhatsApp Image 2025-11-27 at 14.12.31.jpeg" 
                  alt="Ir. Wisnu Salman" 
-                 class="w-full h-full object-cover">
+                 class="w-full h-full object-cover click-zoom cursor-pointer">
+        </div>
+
+        <h5 class="font-trajan font-bold text-xl mb-1 text-secondary">
+            Ir. Wisnu Salman ST., IPM., ACPE., ASEAN Eng., C EIA
+        </h5>
+        <h6 class="text-primary font-semibold text-md" data-translate-key="treasurer1">
+            Penasehat
+        </h6>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="bg-white rounded-lg shadow-xl p-6 text-center w-full max-w-xs 
+                hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 
+                flex flex-col items-center animate-on-scroll zoom-in delay-200">
+
+        <div class="w-full h-48 mb-6 overflow-hidden rounded-lg shadow-md">
+            <img src="images/Porto/wisnu.jpeg" 
+                 alt="Ir. Wisnu Salman" 
+                 class="w-full h-full object-cover click-zoom cursor-pointer">
         </div>
 
         <h5 class="font-trajan font-bold text-xl mb-1 text-secondary">
@@ -409,6 +417,57 @@
     </div>
 
 </div>
+
+<!-- BUTTON -->
+<div class="text-center mt-16 animate-on-scroll fade-in-up">
+    <a href="service.html" class="cta-button" data-translate-key="leadershipButton">
+        Lihat Seluruh Tim Manajemen
+    </a>
+</div>
+
+
+<!-- ============================================================= -->
+<!-- ===============  IMAGE POPUP MODAL (FULLSCREEN) =============== -->
+<!-- ============================================================= -->
+
+<div id="imageModal" 
+     class="fixed inset-0 bg-black bg-opacity-70 hidden 
+            flex justify-center items-center z-50">
+
+    <span id="closeModal" 
+          class="absolute top-5 right-5 text-white text-4xl cursor-pointer">
+        &times;
+    </span>
+
+    <img id="modalImage" 
+         class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl">
+</div>
+
+
+
+<!-- SCRIPT UNTUK POPUP -->
+<script>
+    // Buka modal saat gambar diklik
+    document.querySelectorAll('.click-zoom').forEach(img => {
+        img.addEventListener('click', function () {
+            document.getElementById("imageModal").classList.remove("hidden");
+            document.getElementById("modalImage").src = this.src;
+        });
+    });
+
+    // Tutup modal dengan tombol X
+    document.getElementById("closeModal").onclick = function () {
+        document.getElementById("imageModal").classList.add("hidden");
+    };
+
+    // Tutup modal jika klik area gelap
+    document.getElementById("imageModal").onclick = function (e) {
+        if (e.target.id === "imageModal") {
+            document.getElementById("imageModal").classList.add("hidden");
+        }
+    };
+</script>
+
 
 
 
